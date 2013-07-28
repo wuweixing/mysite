@@ -1,0 +1,11 @@
+%title 语法基础
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Bash]]
+==语法基础==
+----
+<center>
+<h2>
+[[review|Bash补课]]
+</h2>
+</center>
+----

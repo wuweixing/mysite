@@ -1,0 +1,15 @@
+%title 语言基础
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]]
+==语言基础==
+----
+<center>
+<h2>
+[[php55|PHP5.5新特性]]
+----
+[[gleaning|PHP基础拾遗]]
+----
+[[standard|PHP编码规范]]
+</h2>
+</center>
+----

@@ -1,0 +1,9 @@
+%title Girl Friend
+
+[[../../index|首页]] - [[../index|Album]]
+==Girl Friend==
+----
+<center>[[pic08|{{../../../public/images/gf/kiss.jpg||width="530px" height="400px"}}]]</center>
+----
+<red>date</red> : 2012-08-24
+----

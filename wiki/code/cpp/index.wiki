@@ -1,0 +1,11 @@
+%title C++
+
+[[../../index|首页]] - [[../index|Code]]
+==C++==
+----
+<center>
+<h2>
+[[base/index|语言基础]]
+</h2>
+</center>
+----

@@ -1,0 +1,9 @@
+%title Vim命令拾遗
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Vim]] - [[index|Base]]
+==Vim命令拾遗==
+----
+命令模式下键入 `:set all` 可以显示当前全部配置项
+----
+<red>date</red> : 2013-06-27
+----

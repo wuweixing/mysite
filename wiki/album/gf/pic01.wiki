@@ -1,0 +1,9 @@
+%title Girl Friend
+
+[[../../index|首页]] - [[../index|Album]]
+==Girl Friend==
+----
+<center>[[pic02|{{../../../public/images/gf/yun01.jpg}}]]</center>
+----
+<red>date</red> : 2011-03-10
+----

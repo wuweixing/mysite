@@ -1,0 +1,13 @@
+%title 常用插件
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Vim]]
+==常用插件==
+----
+<center>
+<h2>
+[[vimium|Vimium浏览器插件]]
+----
+[[pathogen|Pathogen包管理器]]
+</h2>
+</center>
+----

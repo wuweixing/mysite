@@ -1,0 +1,13 @@
+%title PHP
+
+[[../../index|首页]] - [[../index|Code]]
+==PHP==
+----
+<center>
+<h2>
+[[base/index|语言基础]]
+----
+[[tools/index|Tools]]
+</h2>
+</center>
+----

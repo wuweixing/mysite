@@ -1,0 +1,11 @@
+%title DataBase
+
+[[../../index|首页]] - [[../index|Code]]
+==DataBase==
+----
+<center>
+<h2>
+[[mysql/index|MySQL]]
+</h2>
+</center>
+----

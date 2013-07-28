@@ -1,0 +1,49 @@
+%title Composer包管理器
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Tools]]
+==Composer包管理器==
+----
+===基本用法===
+
+# 获取：`curl -s http://getcomposer.org/installer | php` 或者 `php -r "eval('?>'.file_get_contents('https://getcomposer.org/installer'));"`
+# 安装依赖包：`php composer.phar install`
+# 使用组件：`include_once './vendor/autoload.php';`
+----
+===常用命令===
+
+* `composer install`：安装依赖
+* `composer update`：更新依赖
+* `composer create-project 项目名`：从已有项目新建
+----
+===配置语法===
+
+* 配置文件是指项目根目录下的 `composer.json` 文件
+* 依赖的默认安装目录为根目录下的 `vendor/`
+* 基本语法：
+{{{
+{
+    "指令1": {
+        内容1
+    },
+    "指令2": {
+        内容2
+    },
+}
+}}}
+
+指定依赖包：
+{{{
+"require": {
+    "提供者/组件名": "版本号"
+}
+}}}
+
+自定义依赖安装文件夹：
+{{{
+"config": {
+    "vendor-dir": "自定义文件夹"
+}
+}}}
+----
+<red>date</red> : 2013-06-03
+----

@@ -1,0 +1,11 @@
+%title Bash
+
+[[../../index|首页]] - [[../index|Code]]
+==Bash==
+----
+<center>
+<h2>
+[[base/index|语法基础]]
+</h2>
+</center>
+----

@@ -1,0 +1,13 @@
+%title Vim
+
+[[../../index|首页]] - [[../index|Code]]
+==Vim==
+----
+<center>
+<h2>
+[[base/index|基础使用]]
+----
+[[plugin/index|查用插件]]
+</h2>
+</center>
+----

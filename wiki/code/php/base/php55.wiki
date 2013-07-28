@@ -1,0 +1,17 @@
+%title PHP5.5新特性
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Base]]
+==PHP5.5新特性==
+----
+# 新增函数 `boolval`，补全了 `xxxval` 函数家族（`intval`、`floatval`、`strval`）
+# 新增关键字 `yield`，可用于迭代器中向外传递数据
+# 新增关键字 `finally`，终于将 `try-catch-finally` 补齐了
+# `foreach` 支持 `list`，对于“数组的数组”不再需要使用两重 `foreach` 了
+# `empty` 的参数不再受限，之前是只支持变量，现在可以是任意表达式
+# 定义数组不再需要使用 `array()` 了，可以直接用 `[]` 的语法，如 `[1, 2, 3]`
+# 非变量的数组和字符串也允许取下标了，如 `array(1, 2, 3)[1]`、`[1, 2, 3][1]`、`'Ruchee'[1]`
+# 可通过 `::class` 获取类名以及包括完整的命令空间，使用方法：`MyClass::class`
+# 集成了 `Zend` 新近开源的 `opcache` 扩展
+----
+<red>date</red> : 2013-07-05
+----

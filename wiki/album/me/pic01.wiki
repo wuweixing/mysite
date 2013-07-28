@@ -1,0 +1,9 @@
+%title Me
+
+[[../../index|首页]] - [[../index|Album]]
+==Me==
+----
+<center>[[pic02|{{../../../public/images/me/ruchee01.jpg||width="400px" height="530px"}}]]</center>
+----
+<red>date</red> : 2012-08-22
+----

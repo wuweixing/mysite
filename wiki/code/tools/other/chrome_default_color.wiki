@@ -1,0 +1,15 @@
+%title 修改Chrome浏览器默认背景颜色
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Tools]] - [[index|Other]]
+==修改Chrome浏览器默认背景颜色==
+----
+`Q`：长时间通过浏览器看文章，纯白的背景伤眼睛，可以将背景颜色改一下吗？
+
+`A`：找到 `Chrome` 安装目录下一个名为 `Custom.css` 的样式表文件，`Win7` 下的路径一般是 `C:\Users\Administrator\AppData\Local\Google\Chrome\User Data\Profile 1\User StyleSheets\Custom.css`
+
+向该文件写入这么一行：`html, body {background-color: #CCE8CC!important;}`，然后保存
+
+这回 `Chrome` 的默认背景就成 `浅绿色` 了
+----
+<red>date</red> : 2013-07-24
+----

@@ -1,0 +1,11 @@
+%title 基础使用
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Vim]]
+==基础使用==
+----
+<center>
+<h2>
+[[command|Vim命令拾遗]]
+</h2>
+</center>
+----

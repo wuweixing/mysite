@@ -1,0 +1,4 @@
+%title 语言基础
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|CommonLisp]]
+==语言基础==

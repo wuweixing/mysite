@@ -1,0 +1,11 @@
+%title 命令提示符显示颜色
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Tools]] - [[index|Other]]
+==命令提示符显示颜色==
+----
+`Q`：在 `Windows` 下使用命令提示符时黑压压的一片，可否弄点颜色进行区分？
+
+`A`：完全可以。访问 `http://adoxa.3eeweb.com/ansicon` 下载最新的 `ansixxx.zip`，解压后进入 `x86` 目录（`64bit` 则进 `x64` 目录），在该目录上执行命令 `ansicon.exe -i`。完成后，重开命令行，这回使用命令提示符就有颜色啦
+----
+<red>date</red> : 2013-07-01
+----

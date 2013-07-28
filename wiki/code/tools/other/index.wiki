@@ -1,0 +1,13 @@
+%title 其他辅助工具
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Tools]]
+==其他辅助工具==
+----
+<center>
+<h2>
+[[cmd_color|命令提示符显示颜色]]
+----
+[[chrome_default_color|修改Chrome浏览器默认背景颜色]]
+</h2>
+</center>
+----

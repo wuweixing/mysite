@@ -1,0 +1,19 @@
+%title MySQL
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|DataBase]]
+==MySQL==
+----
+<center>
+<h2>
+[[cmd|命令行操作]]
+----
+[[query|基本查询]]
+----
+[[datatype|数据类型]]
+----
+[[funcs|内建函数]]
+----
+[[view|视图]]
+</h2>
+</center>
+----

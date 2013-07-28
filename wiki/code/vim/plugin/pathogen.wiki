@@ -1,0 +1,9 @@
+%title Pathogen包管理器
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Vim]] - [[index|Plugin]]
+==Pathogen包管理器==
+----
+为各个插件的帮助文档生成 `tags` 文件：在命令模式下键入 `:call pathogen#helptags()` 即可
+----
+<red>date</red> : 2013-06-19
+----

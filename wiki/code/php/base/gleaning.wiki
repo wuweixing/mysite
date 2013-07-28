@@ -1,0 +1,12 @@
+%title PHP基础拾遗
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Base]]
+==PHP基础拾遗==
+----
+===预定义常量===
+
+* `DIRECTORY_SEPARATOR`：文件分隔符
+* `PHP_EOL`：换行符
+----
+<red>date</red> : 2013-07-09
+----
