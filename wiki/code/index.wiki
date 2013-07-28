@@ -7,9 +7,10 @@
 <h2>
 [[cpp/index|C++]]
 [[php/index|PHP]]
+[[ruby/index|Rb]]
 [[commonlisp/index|CL]]
-[[web/index|Web]]
 ----
+[[web/index|Web]]
 [[database/index|DataBase]]
 [[vim/index|Vim]]
 [[bash/index|Bash]]

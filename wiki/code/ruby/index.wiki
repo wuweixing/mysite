@@ -1,0 +1,11 @@
+%title Ruby
+
+[[../../index|首页]] - [[../index|Code]]
+==Ruby==
+----
+<center>
+<h2>
+[[base/index|语言基础]]
+</h2>
+</center>
+----
