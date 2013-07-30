@@ -1,5 +1,6 @@
 Laravel artisan命令行工具
 
+
 全局相关
 
  php artisan：显示详细的命令行帮助信息，同 php artisan list
@@ -17,6 +18,7 @@ Laravel artisan命令行工具
  php artisan tinker：进入与当前应用环境绑定的 REPL 环境，相当于 Rails 框架的 rails console 命令
  php artisan workbench 组织名/包名：这将在应用根目录产生一个名为 workbench 的文件夹，然后按 组织名/包名 的形式生成一个符合 Composer 标准的包结构，并自动安装必要的依赖 [需要首先完善好 app/config/workbench.php 文件的内容]
 
+
 功能相关
 
  php artisan cache:clear：清除应用程序缓存
@@ -30,5 +32,6 @@ Laravel artisan命令行工具
  php artisan migrate:reset：回滚所有的数据迁移
  php artisan migrate:rollback：回滚最近一次数据迁移
  php artisan session:table：生成一个用于 session 的数据迁移文件
+
 
 2013-07-29 14:05
