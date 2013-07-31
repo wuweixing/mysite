@@ -3,11 +3,11 @@
 <center>
 [[index|{{../public/images/ruchee.jpg}}]]
 ----
-<h6>
-A `Vimer` who use `D` `PHP` and `CommonLisp`
+<h5>
+Just a `Vimer`
 
 You can contact me by <a href="http://wpa.qq.com/msgrd?v=3&uin=1405665177&site=qq&menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=2:1405665177:52" alt="1405665177" title="1405665177" border="0"/></a> or <a href="mailto:my@ruchee.com"><img src="../public/images/email.gif"/ alt="my@ruchee.com" title="my@ruchee.com"></a>
-</h6>
+</h5>
 ----
 <h2>
 [[journal/index|Journal]]
