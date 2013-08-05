@@ -4,8 +4,8 @@ Laravel artisan命令行工具
 全局相关
 
  php artisan：显示详细的命令行帮助信息，同 php artisan list
- php artisan –help：显示帮助命令的使用格式，同 php artisan help
- php artisan –version：显示当前使用的 Laravel 版本
+ php artisan –-help：显示帮助命令的使用格式，同 php artisan help
+ php artisan –-version：显示当前使用的 Laravel 版本
  php artisan changes：列出当前版本相对于上一版本的主要变化
  php artisan down：将站点设为维护状态
  php artisan up：将站点设回可访问状态
@@ -24,10 +24,10 @@ Laravel artisan命令行工具
  php artisan cache:clear：清除应用程序缓存
  php artisan command:make 命令名：在 app/commands 目录下生成一个名为 命令名.php 的自定义命令文件
  php artisan controller:make 控制器名：在 app/controllers 目录下生成一个名为 控制器名.php 的控制器文件
+ php artisan key:generate：生成一个随机的 key，并自动更新到 app/config/app.php 的 key 键值对
  php artisan db:seed：对数据库填充种子数据，以用于测试
- php artisan key:generate：生成一个随机的 key，并自动更新到 app/config/app.ph 的 key 键值对
- php artisan migrate:install：初始化迁移数据表
  php artisan migrate:make 迁移名：这将在 app/database/migrations 目录下生成一个名为 时间+迁移名.php 的数据迁移文件，并自动执行一次 php artisan dump-autoload 命令
+ php artisan migrate:install：初始化迁移数据表
  php artisan migrate:refresh：重置并重新执行所有的数据迁移
  php artisan migrate:reset：回滚所有的数据迁移
  php artisan migrate:rollback：回滚最近一次数据迁移
