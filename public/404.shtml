@@ -68,7 +68,7 @@
           var html = "<br/><hr>";
           html += "<br/><h1 class='justcenter'>浏览Vim配置的朋友请注意！</h1>";
           html += "<h6 class='justcenter'>本站所有Vim相关的页面已移除，请访问下面的链接浏览我最新的配置：<br/><br/>" +
-              "<a href='https://github.com/ruchee/vim/blob/master/_vimrc' target='_blank'>https://github.com/ruchee/vim/blob/master/_vimrc</a><br/><br/>"+
+              "<a href='https://github.com/ruchee/vim' target='_blank'>https://github.com/ruchee/vim</a><br/><br/>"+
               "多有不便，还望见谅" +
               "<br/><br/></h6>";
           html += "<hr>";
