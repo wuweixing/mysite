@@ -1,0 +1,4 @@
+%title Math
+
+[[../../index|首页]] - [[../index|Code]]
+==Math==
