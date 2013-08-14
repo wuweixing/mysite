@@ -219,6 +219,8 @@ int main (int argc, char* argv[])
 * 将 `Vimwiki` 部署到 `Github Pages`：`https://github.com/ruchee/backup2/blob/master/code/tools/git/github_pages.wiki`
 * `Vim` 使用一周年纪念：`https://github.com/ruchee/backup2/blob/master/code/linux/vim/vim_one_year.wiki`
 * `Vim` 开发 `GTK+` 应用演示（很久以前录的一个小视频，与本文没多大关系，随便看看吧）：`https://raw.github.com/ruchee/backup2/master/images/vim_gtk.gif`
+
+本博客 `CSS` 文件修改自 <a href="http://wiki.ktmud.com/" target="_blank">丘迟的维基世界</a>，特表感谢
 ----
 <red>date</red> : 2013-08-14
 ----
