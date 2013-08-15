@@ -6,16 +6,13 @@
 <center>
 <h2>
 [[c/index|C]]
-[[d/index|D]]
 [[commonlisp/index|CL]]
-[[newlisp/index|NL]]
 [[php/index|PHP]]
-[[javascript/index|JavaScript]]
+[[web/index|Web]]
 ----
 [[csbase/index|CSBase]]
 [[math/index|Math]]
 [[database/index|DataBase]]
-[[web/index|Web]]
 [[tools/index|Tools]]
 [[other/index|Other]]
 </h2>

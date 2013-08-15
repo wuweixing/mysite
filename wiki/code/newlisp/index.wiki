@@ -1,4 +1,0 @@
-%title newLisp
-
-[[../../index|首页]] - [[../index|Code]]
-==newLisp==
