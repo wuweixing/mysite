@@ -5,9 +5,10 @@
 ----
 <center>
 <h2>
-[[cpp/index|C++]]
+[[c/index|C]]
+[[d/index|D]]
 [[commonlisp/index|CL]]
-[[ruby/index|Rb]]
+[[newlisp/index|NL]]
 [[php/index|PHP]]
 [[javascript/index|JavaScript]]
 ----

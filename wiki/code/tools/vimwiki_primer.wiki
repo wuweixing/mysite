@@ -1,5 +1,5 @@
 %title Vimwiki入门教程
-%template discuss
+%template code
 
 [[../../index|首页]] - [[../index|Code]] - [[index|Tools]]
 ==Vimwiki入门教程==

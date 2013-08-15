@@ -1,4 +1,0 @@
-%title C语言精要
-
-[[../../index|首页]] - [[../index|Code]] - [[index|C++]]
-==C语言精要==

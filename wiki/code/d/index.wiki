@@ -1,11 +1,11 @@
-%title C++
+%title D语言
 
 [[../../index|首页]] - [[../index|Code]]
-==C++==
+==D语言==
 ----
 <center>
 <h2>
-[[c_essentials|C语言精要]]
+[[d_syntax|D语言基础入门]]
 </h2>
 </center>
 ----
