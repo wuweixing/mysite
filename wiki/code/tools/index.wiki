@@ -5,7 +5,7 @@
 ----
 <center>
 <h2>
-[[vimwiki_primer|Vimwiki入门教程]]
+[[vimwiki_primer|Vimwiki入门指南]]
 </h2>
 </center>
 ----

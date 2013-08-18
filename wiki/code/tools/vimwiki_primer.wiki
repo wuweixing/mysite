@@ -1,8 +1,8 @@
-%title Vimwiki入门教程
+%title Vimwiki入门指南
 %template code
 
 [[../../index|首页]] - [[../index|Code]] - [[index|Tools]]
-==Vimwiki入门教程==
+==Vimwiki入门指南==
 ----
 ===引子===
 
