@@ -2,3 +2,10 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==PHP==
+----
+<center>
+<h2>
+[[function_gleaning|函数用法拾遗]]
+</h2>
+</center>
+----
