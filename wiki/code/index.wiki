@@ -9,7 +9,7 @@
 [[commonlisp/index|CL]]
 [[ruby/index|Rb]]
 [[php/index|PHP]]
-[[node/index|Node]]
+[[javascript/index|JS]]
 [[web/index|Web]]
 ----
 [[csbase/index|CSBase]]

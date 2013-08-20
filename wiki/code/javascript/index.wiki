@@ -1,4 +1,4 @@
-%title Node
+%title JavaScript
 
 [[../../index|首页]] - [[../index|Code]]
-==Node==
+==JavaScript==
