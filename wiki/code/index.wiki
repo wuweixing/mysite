@@ -5,8 +5,9 @@
 ----
 <center>
 <h2>
-[[languages/index|Lans]]
-[[frameworks/index|Framework]]
+[[cpp/index|C++]]
+[[php/index|PHP]]
+[[ruby/index|Rb]]
 [[web/index|Web]]
 ----
 [[csbase/index|CSBase]]
