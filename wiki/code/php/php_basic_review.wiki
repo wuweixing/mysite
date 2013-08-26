@@ -1,0 +1,83 @@
+%title PHP基础复习
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+==PHP基础复习==
+----
+===变量类型===
+
+`8` 种原始数据类型：
+* `boolean`、`integer`、`float/double`、`string`
+* `array`、`object`
+* `resource`、`NULL`
+
+手册中常见的伪类型：
+* `mixed`（混合类型）
+* `number`（数值类型）
+* `callback`（回调类型）
+----
+===表单处理===
+
+表单中如果名字带点号，则 `PHP` 会自动将其转成下划线，如 `ruchee.name` 转成 `ruchee_name`
+
+如果将 `input` 标签的类型指定为 `image`，则该点击该图片将具有 `submit` 的功用，且会向 `PHP` 传递鼠标点击图片时所在的坐标，示例如下：
+{{{class="brush: html"
+<form action="form.php" method="post">
+    <input type="image" src="ruchee.jpg" name="image" />
+</form>
+
+<!-- PHP接收到的数据 -->
+array (size=2)
+  'image_x' => string '78' (length=2)
+  'image_y' => string '58' (length=2)
+}}}
+
+如果需要从表单向 `PHP` 传递数组，只需将表单的相关输入项命名成数组的形式即可，数组可指定键名也可不指定，对于没指定键名的项，`PHP` 将自动按出现顺序分配数字键名，示例如下：
+{{{class="brush: html"
+<form action="form.php" method="post">
+    <input type="text" name="Array[a]" /><br/>
+    <input type="text" name="Array[]" /><br/>
+    <input type="text" name="Array[b]" /><br/>
+    <input type="text" name="Array[]" /><br/>
+
+    <input type="text" name="Brray[]" /><br/>
+    <input type="text" name="Brray[c]" /><br/>
+    <input type="text" name="Brray[]" /><br/>
+    <input type="text" name="Brray[]" /><br/>
+</form>
+
+<!-- PHP接收到的数据 -->
+'Array' =>
+  array (size=4)
+    'a' => string '1' (length=1)
+    0 => string '11' (length=2)
+    'b' => string '111' (length=3)
+    1 => string '1111' (length=4)
+'Brray' =>
+  array (size=4)
+    0 => string '2' (length=1)
+    'c' => string '22' (length=2)
+    1 => string '222' (length=3)
+    2 => string '2222' (length=4)
+}}}
+
+以数组的方式传递表单数据，不仅仅适用于 `input` 标签，`select` 标签也一样适用，只是 `select` 标签中无法指定键名，全部数字键名将由 `PHP` 自动按序分配，示例如下：
+{{{class="brush: html"
+<form action="form.php" method="post">
+    <select name="sel[]" multiple="yes">  <!-- 声明可多选 -->
+        <option value="AA">a</option>
+        <option value="BB">b</option>
+        <option value="CC">c</option>
+        <option value="DD">d</option>
+    </select>
+</form>
+
+<!-- PHP接收到的数据 -->
+'sel' =>
+    array (size=2)
+      0 => string 'BB' (length=2)
+      1 => string 'CC' (length=2)
+}}}
+----
+<red>date</red> : 2013-08-26
+----
