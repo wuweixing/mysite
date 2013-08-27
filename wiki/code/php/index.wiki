@@ -8,6 +8,8 @@
 [[php_basic_review|PHP基础复习]]
 ----
 [[php_func_math|PHP数学函数]]
+----
+[[php_func_string|PHP字符串处理函数]]
 </h2>
 </center>
 ----
