@@ -1,0 +1,4 @@
+%title D语言
+
+[[../../index|首页]] - [[../index|Code]]
+==D语言==

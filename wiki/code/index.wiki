@@ -6,6 +6,7 @@
 <center>
 <h2>
 [[cpp/index|C++]]
+[[d/index|D]]
 [[commonlisp/index|CL]]
 [[php/index|PHP]]
 [[node/index|Node]]
