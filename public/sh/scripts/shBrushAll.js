@@ -68,83 +68,6 @@ SyntaxHighlighter.brushes.Cpp.prototype = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Cpp.aliases   = ['c', 'cpp', 'C', 'C++'];
 
 
-// For D
-(function() {
-    typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
-
-    function Brush() {
-        var builtins  = 'toString toHash opCmp opEquals ' +
-                        'opUnary opBinary opApply opCall opAssign opIndexAssign opSliceAssign opOpAssign ' +
-                        'opIndex opSlice opDispatch ' +
-                        'toString toHash opCmp opEquals Monitor factory classinfo vtbl offset getHash ' +
-                        'equals compare tsize swap next init flags offTi destroy postblit toString toHash ' +
-                        'factory classinfo Throwable Exception Error capacity reserve assumeSafeAppend clear ' +
-                        'ModuleInfo ClassInfo MemberInfo TypeInfo';
-
-        var properties = '.sizeof .stringof .mangleof .nan .init .alignof .max .min .infinity .epsilon .mant_dig ' +
-                        '.max_10_exp .max_exp .min_10_exp .min_exp .min_normal .re .im';
-
-        var special_tokens = '__FILE__ __LINE__ __DATE__ __EOF__ __TIME__ __TIMESTAMP__ __VENDOR__ __VERSION__ #line';
-
-        var keywords =  '@property @disable abstract alias align asm assert auto body bool break byte case cast catch ' +
-                        'cdouble cent cfloat char class const continue creal dchar debug default delegate delete deprecated ' +
-                        'do double else enum export extern false final finally float for foreach foreach_reverse ' +
-                        'function goto idouble if ifloat immutable import in inout int interface invariant ireal ' +
-                        'is lazy long macro mixin module new nothrow null out override package pragma private ' +
-                        'protected public pure real ref return scope shared short static struct super switch ' +
-                        'synchronized template this throw true try typedef typeid typeof ubyte ucent uint ulong ' +
-                        'union unittest ushort version void volatile wchar while with __gshared ' +
-                        '__thread __traits ' +
-                        'string wstring dstring size_t hash_t ptrdiff_t equals_t ';
-
-        this.regexList = [
-            { regex: /\/\/\/.*$/gm, css: 'color3' },
-            { regex: SyntaxHighlighter.regexLib.singleLineCComments, css: 'comments' },
-            { regex: SyntaxHighlighter.regexLib.multiLineCComments, css: 'comments' },
-            { regex: /\/\+[\s\S]*?\+\//g, css: 'color1' },
-            { regex: SyntaxHighlighter.regexLib.multiLineDoubleQuotedString, css: 'string' },
-            { regex: SyntaxHighlighter.regexLib.multiLineSingleQuotedString, css: 'string' },
-            { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
-            { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' },
-            { regex: new RegExp(this.getKeywords(properties), 'gm'), css: 'color2' },
-            { regex: new RegExp(this.getKeywords(special_tokens), 'gm'), css: 'constants' },
-            { regex: new RegExp(this.getKeywords(builtins), 'gm'), css: 'color2' },
-            { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' }
-        ];
-    };
-
-    Brush.prototype = new SyntaxHighlighter.Highlighter();
-    Brush.aliases   = ['d', 'D'];
-
-    SyntaxHighlighter.brushes.D = Brush;
-    typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
-})();
-
-
-// For Lisp
-SyntaxHighlighter.brushes.Lisp = function(){
-
-    var funcs     = 'lambda list progn mapcar car cdr reverse member append format';
-    var keywords  = 'let while unless cond if eq t nil defvar dotimes setf listp numberp not equal';
-    var macros    = 'loop when dolist dotimes defun';
-    var operators = '> < + - = * / %';
-
-    this.regexList = [
-        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
-        { regex: new RegExp('&\\w+;', 'g'), css: 'plain' },
-        { regex: new RegExp(';.*', 'g'), css: 'comments' },
-        { regex: new RegExp("'(\\w|-)+", 'g'), css: 'variable' },
-        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
-        { regex: new RegExp(this.getKeywords(macros), 'gm'), css: 'keyword' },
-        { regex: new RegExp(this.getKeywords(funcs), 'gm'),     css: 'functions' },
-    ];
-
-}
-
-SyntaxHighlighter.brushes.Lisp.prototype = new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Lisp.aliases   = ['lisp', 'Lisp'];
-
-
 // For PHP
 SyntaxHighlighter.brushes.Php = function() {
     var funcs = 'abs acos acosh addcslashes addslashes ' +
@@ -207,6 +130,34 @@ SyntaxHighlighter.brushes.Php = function() {
 
 SyntaxHighlighter.brushes.Php.prototype = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Php.aliases = ['php', 'PHP'];
+
+
+// For Ruby
+SyntaxHighlighter.brushes.Ruby = function() {
+    var keywords = 'alias and BEGIN begin break case class def define_method defined do each else elsif ' +
+        'END end ensure false for if in module new next nil not or raise redo rescue retry return ' +
+        'self super then throw true undef unless until when while yield';
+
+    var builtins = 'Array Bignum Binding Class Continuation Dir Exception FalseClass File::Stat File Fixnum Fload ' +
+        'Hash Integer IO MatchData Method Module NilClass Numeric Object Proc Range Regexp String Struct::TMS Symbol ' +
+        'ThreadGroup Thread Time TrueClass';
+
+    this.regexList = [
+        { regex: SyntaxHighlighter.regexLib.singleLinePerlComments, css: 'comments' },  // one line comments
+        { regex: SyntaxHighlighter.regexLib.doubleQuotedString,  css: 'string' },  // double quoted strings
+        { regex: SyntaxHighlighter.regexLib.singleQuotedString,  css: 'string' },  // single quoted strings
+        { regex: /\b[A-Z0-9_]+\b/g,         css: 'constants' },  // constants
+        { regex: /:[a-z][A-Za-z0-9_]*/g,       css: 'color2' },  // symbols
+        { regex: /(\$|@@|@)\w+/g,         css: 'variable bold' }, // $global, @instance, and @@class variables
+        { regex: new RegExp(this.getKeywords(keywords), 'gm'),  css: 'keyword' },  // keywords
+        { regex: new RegExp(this.getKeywords(builtins), 'gm'),  css: 'color1' }   // builtins
+    ];
+
+    this.forHtmlScript(SyntaxHighlighter.regexLib.aspScriptTags);
+};
+
+SyntaxHighlighter.brushes.Ruby.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Ruby.aliases   = ['ruby', 'Ruby'];
 
 
 // For CoffeeScript
@@ -532,6 +483,80 @@ SyntaxHighlighter.brushes.Vim = function() {
 
 SyntaxHighlighter.brushes.Vim.prototype  = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Vim.aliases    = ['vim', 'Vim'];
+
+
+// For Sass/Scss
+(function () {
+    typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
+
+    function Brush () {
+        function getKeywordsCSS (str) {
+            return '\\b([a-z_]|)' + str.replace(/ /g, '(?=:)\\b|\\b([a-z_\\*]|\\*|)') + '(?=:)\\b';
+        };
+
+        function getValuesCSS (str) {
+            return '\\b' + str.replace(/ /g, '(?!-)(?!:)\\b|\\b()') + '\:\\b';
+        };
+
+        var keywords = 'ascent azimuth background-attachment background-color background-image background-position ' +
+                        'background-repeat background baseline bbox border-collapse border-color border-spacing border-style border-top ' +
+                        'border-right border-bottom border-left border-top-color border-right-color border-bottom-color border-left-color ' +
+                        'border-top-style border-right-style border-bottom-style border-left-style border-top-width border-right-width ' +
+                        'border-bottom-width border-left-width border-width border bottom cap-height caption-side centerline clear clip color ' +
+                        'content counter-increment counter-reset cue-after cue-before cue cursor definition-src descent direction display ' +
+                        'elevation empty-cells float font-size-adjust font-family font-size font-stretch font-style font-variant font-weight font ' +
+                        'height left letter-spacing line-height list-style-image list-style-position list-style-type list-style margin-top ' +
+                        'margin-right margin-bottom margin-left margin marker-offset marks mathline max-height max-width min-height min-width orphans ' +
+                        'outline-color outline-style outline-width outline overflow padding-top padding-right padding-bottom padding-left padding page ' +
+                        'page-break-after page-break-before page-break-inside pause pause-after pause-before pitch pitch-range play-during position ' +
+                        'quotes right richness size slope src speak-header speak-numeral speak-punctuation speak speech-rate stemh stemv stress ' +
+                        'table-layout text-align top text-decoration text-indent text-shadow text-transform unicode-bidi unicode-range units-per-em ' +
+                        'vertical-align visibility voice-family volume white-space widows width widths word-spacing x-height z-index';
+
+        var values = 'above absolute all always aqua armenian attr aural auto avoid baseline behind below bidi-override black blink block blue bold bolder '+
+                        'both bottom braille capitalize caption center center-left center-right circle close-quote code collapse compact condensed '+
+                        'continuous counter counters crop cross crosshair cursive dashed decimal decimal-leading-zero digits disc dotted double '+
+                        'embed embossed e-resize expanded extra-condensed extra-expanded fantasy far-left far-right fast faster fixed format fuchsia '+
+                        'gray green groove handheld hebrew help hidden hide high higher icon inline-table inline inset inside invert italic '+
+                        'justify landscape large larger left-side left leftwards level lighter lime line-through list-item local loud lower-alpha '+
+                        'lowercase lower-greek lower-latin lower-roman lower low ltr marker maroon medium message-box middle mix move narrower '+
+                        'navy ne-resize no-close-quote none no-open-quote no-repeat normal nowrap n-resize nw-resize oblique olive once open-quote outset '+
+                        'outside overline pointer portrait pre print projection purple red relative repeat repeat-x repeat-y rgb ridge right right-side '+
+                        'rightwards rtl run-in screen scroll semi-condensed semi-expanded separate se-resize show silent silver slower slow '+
+                        'small small-caps small-caption smaller soft solid speech spell-out square s-resize static status-bar sub super sw-resize '+
+                        'table-caption table-cell table-column table-column-group table-footer-group table-header-group table-row table-row-group teal '+
+                        'text-bottom text-top thick thin top transparent tty tv ultra-condensed ultra-expanded underline upper-alpha uppercase upper-latin '+
+                        'upper-roman url visible wait white wider w-resize x-fast x-high x-large x-loud x-low x-slow x-small x-soft xx-large xx-small yellow';
+
+        var fonts = '[mM]onospace [tT]ahoma [vV]erdana [aA]rial [hH]elvetica [sS]ans-serif [sS]erif [cC]ourier mono sans serif';
+
+        var statements = '!important !default';
+        var preprocessor = '@import @extend @debug @warn @if @for @while @mixin @include';
+
+        var r = SyntaxHighlighter.regexLib;
+
+        this.regexList = [
+            { regex: r.multiLineCComments, css: 'comments' },
+            { regex: r.singleLineCComments, css: 'comments' },
+            { regex: r.doubleQuotedString, css: 'string' },
+            { regex: r.singleQuotedString, css: 'string' },
+            { regex: /\#[a-fA-F0-9]{3,6}/g, css: 'value' },
+            { regex: /\b(-?\d+)(\.\d+)?(px|em|pt|\:|\%|)\b/g, css: 'value' },
+            { regex: /\$\w+/g, css: 'variable' },
+            { regex: new RegExp(this.getKeywords(statements), 'g'), css: 'color3' },
+            { regex: new RegExp(this.getKeywords(preprocessor), 'g'), css: 'preprocessor' },
+            { regex: new RegExp(getKeywordsCSS(keywords), 'gm'), css: 'keyword' },
+            { regex: new RegExp(getValuesCSS(values), 'g'), css: 'value' },
+            { regex: new RegExp(this.getKeywords(fonts), 'g'), css: 'color1' }
+        ];
+    };
+
+    Brush.prototype = new SyntaxHighlighter.Highlighter();
+    Brush.aliases   = ['sass', 'Sass', 'scss', 'Scss'];
+
+    SyntaxHighlighter.brushes.Sass = Brush;
+    typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
+})();
 
 
 // For Less
