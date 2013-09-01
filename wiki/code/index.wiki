@@ -7,7 +7,6 @@
 <h2>
 [[cpp/index|C++]]
 [[php/index|PHP]]
-[[ruby/index|Rb]]
 [[node/index|Node]]
 [[web/index|Web]]
 ----
