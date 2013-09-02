@@ -1,11 +1,11 @@
-%title CS Base
+%title Ruby
 
 [[../../index|首页]] - [[../index|Code]]
-==CS Base==
+==Ruby==
 ----
 <center>
 <h2>
-[[socket|Socket网络编程]]
+[[ruby_syntax|Ruby语法拾遗]]
 </h2>
 </center>
 ----

@@ -1,0 +1,53 @@
+%title Ruby语法拾遗
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Ruby]]
+==Ruby语法拾遗==
+----
+===基础语法===
+
+`变量` 不是对象，变量只是对对象的引用
+
+`类方法`：为类本身所有，调用时通过类名直接调用，下面是类方法的三种定义方式
+{{{class="brush: ruby"
+class ClassName
+  def ClassName.class_func1
+    '类方法1'
+  end
+  
+  def self.class_func2
+    '类方法2'
+  end
+
+  class <<self
+    def class_func3
+      '类方法3'
+    end
+  end
+end
+}}}
+
+数值类型：`Fixnum`、`Bignum`、`Float`
+----
+===命名规范===
+
+* `局部变量`：全小写
+* `全局变量`：以 `$` 引导
+* `实例变量`：以 `@` 引导
+* `类变量`：以 `@@` 引导，被所有对象所共享
+* `常量/类名/模块名`：首字母大写
+----
+===常用语法糖===
+
+* `%w`：字符串数组
+* `%q`：单引号字符串
+* `%Q`：双引号字符串
+----
+===常用方法===
+
+* `private_class_method`：声明类的私有方法
+* `dup`：复制一个对象
+* `freeze`：冻结一个对象
+----
+<red>date</red> : 2013-09-02
+----

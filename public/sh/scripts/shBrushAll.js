@@ -68,6 +68,34 @@ SyntaxHighlighter.brushes.Cpp.prototype = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Cpp.aliases   = ['c', 'cpp', 'C', 'C++'];
 
 
+// For Ruby
+SyntaxHighlighter.brushes.Ruby = function() {
+    var keywords = 'alias and BEGIN begin break case class def define_method defined do each else elsif ' +
+        'END end ensure false for if in module new next nil not or raise redo rescue retry return ' +
+        'self super then throw true undef unless until when while yield';
+
+    var builtins = 'Array Bignum Binding Class Continuation Dir Exception FalseClass File::Stat File Fixnum Fload ' +
+        'Hash Integer IO MatchData Method Module NilClass Numeric Object Proc Range Regexp String Struct::TMS Symbol ' +
+        'ThreadGroup Thread Time TrueClass';
+
+    this.regexList = [
+        { regex: SyntaxHighlighter.regexLib.singleLinePerlComments, css: 'comments' },
+        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
+        { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' },
+        { regex: /\b[A-Z0-9_]+\b/g, css: 'constants' },
+        { regex: /:[a-z][A-Za-z0-9_]*/g, css: 'color2' },
+        { regex: /(\$|@@|@)\w+/g, css: 'variable bold' },
+        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
+        { regex: new RegExp(this.getKeywords(builtins), 'gm'), css: 'color1' }
+    ];
+
+    this.forHtmlScript(SyntaxHighlighter.regexLib.aspScriptTags);
+};
+
+SyntaxHighlighter.brushes.Ruby.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Ruby.aliases   = ['ruby', 'Ruby'];
+
+
 // For PHP
 SyntaxHighlighter.brushes.Php = function() {
     var funcs = 'abs acos acosh addcslashes addslashes ' +
@@ -457,9 +485,9 @@ SyntaxHighlighter.brushes.Vim.prototype  = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Vim.aliases    = ['vim', 'Vim'];
 
 
-// For Less
+// For Sass
 (function () {
-    SyntaxHighlighter = SyntaxHighlighter || (typeof require !== 'undefined'? require('shCore').SyntaxHighlighter : null);
+    typeof(require) != 'undefined' ? SyntaxHighlighter = require('shCore').SyntaxHighlighter : null;
 
     function Brush () {
         function getKeywordsCSS (str) {
@@ -487,7 +515,7 @@ SyntaxHighlighter.brushes.Vim.aliases    = ['vim', 'Vim'];
 
         var values = 'above absolute all always aqua armenian attr aural auto avoid baseline behind below bidi-override black blink block blue bold bolder '+
                         'both bottom braille capitalize caption center center-left center-right circle close-quote code collapse compact condensed '+
-                        'continuous counter counters crop cross crosshair cursive dashed decimal decimal-leading-zero default digits disc dotted double '+
+                        'continuous counter counters crop cross crosshair cursive dashed decimal decimal-leading-zero digits disc dotted double '+
                         'embed embossed e-resize expanded extra-condensed extra-expanded fantasy far-left far-right fast faster fixed format fuchsia '+
                         'gray green groove handheld hebrew help hidden hide high higher icon inline-table inline inset inside invert italic '+
                         'justify landscape large larger left-side left leftwards level lighter lime line-through list-item local loud lower-alpha '+
@@ -502,29 +530,31 @@ SyntaxHighlighter.brushes.Vim.aliases    = ['vim', 'Vim'];
 
         var fonts = '[mM]onospace [tT]ahoma [vV]erdana [aA]rial [hH]elvetica [sS]ans-serif [sS]erif [cC]ourier mono sans serif';
 
+        var statements = '!important !default';
+        var preprocessor = '@import @extend @debug @warn @if @for @while @mixin @include';
+
+        var r = SyntaxHighlighter.regexLib;
+
         this.regexList = [
-            { regex: SyntaxHighlighter.regexLib.multiLineCComments, css: 'comments' },
-            { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
-            { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' },
+            { regex: r.multiLineCComments, css: 'comments' },
+            { regex: r.singleLineCComments, css: 'comments' },
+            { regex: r.doubleQuotedString, css: 'string' },
+            { regex: r.singleQuotedString, css: 'string' },
             { regex: /\#[a-fA-F0-9]{3,6}/g, css: 'value' },
-            { regex: /(-?\d+)(\.\d+)?(px|em|pt|\:|\%|)/g, css: 'value' },
-            { regex: /!important/g, css: 'color3' },
+            { regex: /\b(-?\d+)(\.\d+)?(px|em|pt|\:|\%|)\b/g, css: 'value' },
+            { regex: /\$\w+/g, css: 'variable' },
+            { regex: new RegExp(this.getKeywords(statements), 'g'), css: 'color3' },
+            { regex: new RegExp(this.getKeywords(preprocessor), 'g'), css: 'preprocessor' },
             { regex: new RegExp(getKeywordsCSS(keywords), 'gm'), css: 'keyword' },
             { regex: new RegExp(getValuesCSS(values), 'g'), css: 'value' },
-            { regex: new RegExp(this.getKeywords(fonts), 'g'), css: 'color1' },
-            { regex: /@[a-zA-Z0-9\-]+/g, css: 'variable' }
-            ];
-
-        this.forHtmlScript({
-            left: /(&lt;|<)\s*style.*?(&gt;|>)/gi,
-            right: /(&lt;|<)\/\s*style\s*(&gt;|>)/gi
-        });
+            { regex: new RegExp(this.getKeywords(fonts), 'g'), css: 'color1' }
+        ];
     };
 
     Brush.prototype = new SyntaxHighlighter.Highlighter();
-    Brush.aliases   = ['less', 'Less'];
+    Brush.aliases   = ['sass', 'Sass', 'scss', 'Scss'];
 
-    SyntaxHighlighter.brushes.LESS = Brush;
+    SyntaxHighlighter.brushes.Sass = Brush;
     typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
 })();
 

@@ -5,9 +5,8 @@
 ----
 <center>
 <h2>
-[[cpp/index|C++]]
+[[ruby/index|RoR]]
 [[php/index|PHP]]
-[[node/index|Node]]
 [[web/index|Web]]
 ----
 [[csbase/index|CSBase]]
