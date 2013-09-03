@@ -14,7 +14,7 @@ class ClassName
   def ClassName.class_func1
     '类方法1'
   end
-  
+
   def self.class_func2
     '类方法2'
   end
@@ -28,6 +28,22 @@ end
 }}}
 
 数值类型：`Fixnum`、`Bignum`、`Float`
+
+区间（`Range`）可以有三种用途：`序列`、`条件`、`间隔`
+# `序列`：`(1..10).to_a`（将序列 `1..10` 转成数组）
+# `条件`：`if line =~ /start/ .. line =~ /end/`（如果第一个 `line` 包含 `start` 且最后一个 `line` 包含 `end`）
+# `间隔`：`(1..10) === 5`（判断 `5` 有没有包含在 `1..10` 之间）
+
+正则表达式的三种创建方式：
+# `Regexp.new('xxx')`
+# `/xxx/`
+# `%r{xxx}`
+
+如果方法定义的最后一个参数带前缀 `&`，则其所关联的 `block` 会赋值给该参数，并自动转换成 `Proc` 对象
+
+方法调用时，如果省略接收者，则接收者默认为 `self`，也就是当前对象
+
+定义方法时，参数名前面带 `*` 可以将后续参数收集到一个数组；而调用方法时，在参数数组前面加 `*` 可以将数组拆解成一个个单一的元素
 ----
 ===命名规范===
 
@@ -49,5 +65,33 @@ end
 * `dup`：复制一个对象
 * `freeze`：冻结一个对象
 ----
-<red>date</red> : 2013-09-02
+===正则常用方法与变量===
+
+* `Regexp#match`：匹配
+* `=~`：匹配
+* `!~`：否定匹配
+* `String#sub`、`String#sub!`：单次正则替换
+* `String#gsub`、`String#gsub!`：全部正则替换
+`String#sub` 和 `String#gsub` 的第二个参数可以是 `String` 也可以是 `block`，如果是 `block`，则匹配的子串会传递给 `block`，然后将 `block` 返回的结果替换到原字符串
+
+`\1、\2、\&、\+` 等变量在 `String#sub`、`String#gsub` 的第二个参数中依然可用
+
+* `$&`、`MatchData#[0]`：与模式匹配的那部分字符串
+* `$+反斜点`、`MatchData#pre_match`：匹配之前的那部分字符串
+* `$'`、`MatchData#post_match`：匹配之后的那部分字符串
+* `$~`：`MatchData` 对象，其持有本次匹配所有相关的信息
+* 美元符+`1-9`、`MatchData#[1-9]`：捕获变量，在模式匹配外面依然有效
+----
+===方法辨异===
+
+`to_s` 和 `to_str` 的区别：
+# 在字符串内插时调用 `to_s`
+# 在 `File#join` 和 `String#+` 时调用 `to_str`
+# 在 `Array#join` 时优先调用 `to_str`
+
+`to_s` 和 `inspect` 的却别：
+# `print`、`puts` 调用的 `to_s`
+# `p` 以及其他 `p` 系输出工具调用的 `inspect`
+----
+<red>date</red> : 2013-09-02、2013-09-03
 ----
