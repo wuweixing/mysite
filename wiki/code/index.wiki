@@ -5,9 +5,10 @@
 ----
 <center>
 <h2>
-[[c/index|C]]
 [[php/index|PHP]]
+[[python/index|PY]]
 [[ruby/index|Rb]]
+[[node/index|Node]]
 [[web/index|Web]]
 ----
 [[csbase/index|CSBase]]
