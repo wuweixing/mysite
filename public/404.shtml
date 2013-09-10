@@ -53,22 +53,22 @@
 
   <script>
       var url = window.location.href;
-      if (url.match(/^.*download.*$/)) {
+      if (url.match(/^.*vim.*$/)) {
+          var html = "<br/><hr>";
+          html += "<br/><h1 class='justcenter'>浏览Vim配置的朋友请注意！</h1>";
+          html += "<h6 class='justcenter'>本站所有Vim相关的页面已移除，请访问下面的链接浏览我最新的配置：<br/><br/>" +
+              "<a href='https://github.com/ruchee/vim' target='_blank'>https://github.com/ruchee/vim</a><br/><br/>"+
+              "多有不便，还望见谅" +
+              "<br/><br/></h6>";
+          html += "<hr>";
+          document.writeln(html);
+      } else if (url.match(/^.*download.*$/)) {
           var html = "<br/><hr>";
           html += "<br/><h1 class='justcenter'>下载文件的朋友请注意！</h1>";
           html += "<h6 class='justcenter'>实在抱歉，由于下载量太大，区区几个文件竟然将博客流量尽数耗尽<br/><br/>" +
               "为保证博客的正常访问，我已将整个下载目录全部清除，请通过下面的途径进行下载：<br/><br/>" +
               "1、Github：<a href='https://github.com/ruchee/backup/tree/master/download' target='_blank'>https://github.com/ruchee/backup/tree/master/download</a><br/><br/>" +
               "2、Git命令：git clone https://github.com/ruchee/backup.git（下载文件在download目录）<br/><br/>" +
-              "多有不便，还望见谅" +
-              "<br/><br/></h6>";
-          html += "<hr>";
-          document.writeln(html);
-      } else if (url.match(/^.*vim.*$/)) {
-          var html = "<br/><hr>";
-          html += "<br/><h1 class='justcenter'>浏览Vim配置的朋友请注意！</h1>";
-          html += "<h6 class='justcenter'>本站所有Vim相关的页面已移除，请访问下面的链接浏览我最新的配置：<br/><br/>" +
-              "<a href='https://github.com/ruchee/vim' target='_blank'>https://github.com/ruchee/vim</a><br/><br/>"+
               "多有不便，还望见谅" +
               "<br/><br/></h6>";
           html += "<hr>";

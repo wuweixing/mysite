@@ -5,10 +5,8 @@
 ----
 <center>
 <h2>
-[[php/index|PHP]]
-[[python/index|PY]]
-[[ruby/index|Rb]]
-[[node/index|Node]]
+[[languages/index|Languages]]
+[[frameworks/index|Frameworks]]
 [[web/index|Web]]
 ----
 [[csbase/index|CSBase]]

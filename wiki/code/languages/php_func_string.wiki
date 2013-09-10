@@ -1,7 +1,7 @@
 %title PHP字符串处理函数
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../index|首页]] - [[../index|Code]] - [[index|Languages]]
 ==PHP字符串处理函数==
 ----
 ===基本函数===

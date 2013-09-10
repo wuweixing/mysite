@@ -2,3 +2,10 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==Web==
+----
+<center>
+<h2>
+[[ie_compatibility|IE兼容性问题集锦]]
+</h2>
+</center>
+----

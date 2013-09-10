@@ -1,7 +1,7 @@
 %title Ruby语法拾遗
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|Ruby]]
+[[../../index|首页]] - [[../index|Code]] - [[index|Languages]]
 ==Ruby语法拾遗==
 ----
 ===基础语法===
