@@ -5,6 +5,8 @@
 ----
 <center>
 <h2>
+[[web_tips|Web开发常识]]
+----
 [[ie_compatibility|IE兼容性问题集锦]]
 </h2>
 </center>

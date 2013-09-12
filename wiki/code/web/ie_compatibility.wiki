@@ -1,5 +1,4 @@
 %title IE兼容性问题集锦
-%template code
 
 [[../../index|首页]] - [[../index|Code]] - [[index|Web]]
 ==IE兼容性问题集锦==
