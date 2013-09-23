@@ -38,7 +38,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Comment">&quot; -----------------   Author: Ruchee</span>
 <span class="Comment">&quot; -----------------    Email: my@ruchee.com</span>
 <span class="Comment">&quot; -----------------  WebSite: <a href="http://www.ruchee.com">http://www.ruchee.com</a></span>
-<span class="Comment">&quot; -----------------     Date: 2013-09-14 19:00</span>
+<span class="Comment">&quot; -----------------     Date: 2013-09-23 14:01</span>
 <span class="Comment">&quot; -----------------     For Windows, Cygwin and Linux</span>
 <span class="Comment">&quot; -----------------  <a href="https://github.com/ruchee/vim">https://github.com/ruchee/vim</a></span>
 
@@ -226,15 +226,15 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">set</span> <span class="PreProc">tabstop</span>=4
 
 <span class="Comment">&quot; 对部分语言设置单独的缩进</span>
-<span class="Statement">au</span> <span class="Type">FileType</span> scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=2
-<span class="Statement">au</span> <span class="Type">FileType</span> scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">tabstop</span>=2
+<span class="Statement">au</span> <span class="Type">FileType</span> scala,clojure,scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=2
+<span class="Statement">au</span> <span class="Type">FileType</span> scala,clojure,scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">tabstop</span>=2
 
 <span class="Comment">&quot; 根据后缀名指定文件类型</span>
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.h     <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=c
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.di    <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=d
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.dhtml <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=htmldjango
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.sql   <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=mysql
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.txt   <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=txt
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.h        <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=c
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.di       <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=d
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.dhtml    <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=htmldjango
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.sql      <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=mysql
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.txt      <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=txt
 
 
 <span class="Comment">&quot; 设置着色模式和字体</span>
@@ -522,6 +522,10 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
         <span class="Statement">else</span>
             <span class="Statement">exec</span> <span class="String">&quot;!go build %:t &amp;&amp; ./%:r&quot;</span>
         <span class="Statement">endif</span>
+    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;java&quot;</span>
+        <span class="Statement">exec</span> <span class="String">&quot;!javac %:t &amp;&amp; java %:r&quot;</span>
+    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;scala&quot;</span>
+        <span class="Statement">exec</span> <span class="String">&quot;!scalac %:t &amp;&amp; scala %:r&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;scheme&quot;</span> <span class="Operator">||</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;racket&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!racket -fi %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;lisp&quot;</span>
