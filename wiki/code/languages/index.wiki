@@ -5,8 +5,6 @@
 ----
 <center>
 <h2>
-[[css_basic|CSS基础学习]]
-----
 [[ruby_syntax|Ruby语法拾遗]]
 ----
 [[php_basic_review|PHP基础复习]]

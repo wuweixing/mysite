@@ -1,7 +1,7 @@
 %title CSS基础学习
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|Languages]]
+[[../../index|首页]] - [[../index|Code]] - [[index|Web]]
 ==CSS基础学习==
 ----
 ===样式优先级===
