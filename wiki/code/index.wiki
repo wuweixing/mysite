@@ -5,12 +5,11 @@
 ----
 <center>
 <h2>
-[[languages/index|Languages]]
-[[frameworks/index|Frameworks]]
+[[php/index|PHP]]
+[[node/index|Node]]
 [[web/index|Web]]
 ----
-[[csbase/index|CSBase]]
-[[math/index|Math]]
+[[algorithms/index|Algorithms]]
 [[database/index|DataBase]]
 [[tools/index|Tools]]
 [[other/index|Other]]

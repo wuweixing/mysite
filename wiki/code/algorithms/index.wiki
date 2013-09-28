@@ -1,4 +1,4 @@
-%title Math
+%title Algorithms
 
 [[../../index|首页]] - [[../index|Code]]
-==Math==
+==Algorithms==
