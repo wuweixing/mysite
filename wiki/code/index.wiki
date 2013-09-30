@@ -6,12 +6,12 @@
 <center>
 <h2>
 [[cpp/index|C++]]
-[[commonlisp/index|CL]]
-[[php/index|PHP]]
-[[node/index|Node]]
+[[ruby/index|RoR]]
+[[javascript/index|JavaScript]]
 [[web/index|Web]]
 ----
-[[algorithms/index|Algorithms]]
+[[csbase/index|CSBase]]
+[[algorithms/index|Algo]]
 [[database/index|DataBase]]
 [[tools/index|Tools]]
 [[other/index|Other]]
