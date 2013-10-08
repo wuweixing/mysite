@@ -1,0 +1,21 @@
+%title PHP
+
+[[../../index|首页]] - [[../index|Code]]
+==PHP==
+----
+<center>
+<h2>
+[[php55|PHP5.5新特性]]
+----
+[[basic_review|PHP基础复习]]
+----
+[[func_math|PHP数学函数]]
+----
+[[func_string|PHP字符串处理函数]]
+----
+[[laravel_base|Laravel基础]]
+----
+[[laravel_artisan|Laravel artisan命令行工具]]
+</h2>
+</center>
+----
