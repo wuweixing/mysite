@@ -38,7 +38,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Comment">&quot; -----------------   Author: Ruchee</span>
 <span class="Comment">&quot; -----------------    Email: my@ruchee.com</span>
 <span class="Comment">&quot; -----------------  WebSite: <a href="http://www.ruchee.com">http://www.ruchee.com</a></span>
-<span class="Comment">&quot; -----------------     Date: 2013-09-23 14:01</span>
+<span class="Comment">&quot; -----------------     Date: 2013-10-08 12:51</span>
 <span class="Comment">&quot; -----------------     For Windows, Cygwin and Linux</span>
 <span class="Comment">&quot; -----------------  <a href="https://github.com/ruchee/vim">https://github.com/ruchee/vim</a></span>
 
@@ -52,9 +52,10 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">endif</span>
 
 
-<span class="Comment">&quot; 设置头文件路径，以及tags路径，用于代码补全</span>
+<span class="Comment">&quot; 设置头文件和tags路径，用于代码补全</span>
 <span class="Statement">if</span> <span class="Identifier">g:atCompany</span>
 <span class="Comment">    &quot; set tags+=D:/Ruchee/workspace/common/tags</span>
+<span class="Comment">    &quot; set path+=D:/Ruchee/MinGW/include</span>
 <span class="Statement">else</span>
 <span class="Comment">    &quot; set path+=D:/Develop/MinGW/include</span>
 <span class="Statement">endif</span>
@@ -226,15 +227,13 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">set</span> <span class="PreProc">tabstop</span>=4
 
 <span class="Comment">&quot; 对部分语言设置单独的缩进</span>
-<span class="Statement">au</span> <span class="Type">FileType</span> scala,clojure,scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=2
-<span class="Statement">au</span> <span class="Type">FileType</span> scala,clojure,scheme,racket,lisp,lua,ruby,eruby,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">tabstop</span>=2
+<span class="Statement">au</span> <span class="Type">FileType</span> ruby,eruby,slim,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">shiftwidth</span>=2
+<span class="Statement">au</span> <span class="Type">FileType</span> ruby,eruby,slim,coffee,jade,sh <span class="Statement">set</span> <span class="PreProc">tabstop</span>=2
 
 <span class="Comment">&quot; 根据后缀名指定文件类型</span>
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.h        <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=c
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.di       <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=d
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.dhtml    <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=htmldjango
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.sql      <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=mysql
-<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.txt      <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=txt
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.h   <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=c
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.sql <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=mysql
+<span class="Statement">au</span> <span class="Type">BufRead</span>,<span class="Type">BufNewFile</span> *.txt <span class="Statement">setlocal</span> <span class="PreProc">ft</span>=txt
 
 
 <span class="Comment">&quot; 设置着色模式和字体</span>
@@ -365,24 +364,19 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">else</span>
     <span class="Statement">let</span> <span class="Identifier">g:snippets_dir</span><span class="Operator">=</span><span class="String">'~/.vim/snippets/'</span>
 <span class="Statement">endif</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span>                             <span class="Operator">=</span> <span class="Delimiter">{}</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span>                         <span class="Operator">=</span> <span class="Delimiter">{}</span>
 <span class="Comment">&quot; 设置补全项之间的继承关系，比如 PHP补全继承HTML的补全</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases               <span class="Operator">=</span> <span class="Delimiter">{}</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'c'</span>]          <span class="Operator">=</span> <span class="String">'cpp'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'scheme'</span>]     <span class="Operator">=</span> <span class="String">'racket'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'php'</span>]        <span class="Operator">=</span> <span class="String">'php,codeigniter,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'smarty'</span>]     <span class="Operator">=</span> <span class="String">'smarty,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'blade'</span>]      <span class="Operator">=</span> <span class="String">'blade,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'twig'</span>]       <span class="Operator">=</span> <span class="String">'twig,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'htmldjango'</span>] <span class="Operator">=</span> <span class="String">'htmldjango,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'eruby'</span>]      <span class="Operator">=</span> <span class="String">'eruby,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'scss'</span>]       <span class="Operator">=</span> <span class="String">'scss,css'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'jst'</span>]        <span class="Operator">=</span> <span class="String">'jst,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'mustache'</span>]   <span class="Operator">=</span> <span class="String">'mustache,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'handlebars'</span>] <span class="Operator">=</span> <span class="String">'handlebars,html'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'less'</span>]       <span class="Operator">=</span> <span class="String">'less,css'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'html'</span>]       <span class="Operator">=</span> <span class="String">'html,angular'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'xhtml'</span>]      <span class="Operator">=</span> <span class="String">'html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases           <span class="Operator">=</span> <span class="Delimiter">{}</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'c'</span>]      <span class="Operator">=</span> <span class="String">'cpp'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'php'</span>]    <span class="Operator">=</span> <span class="String">'php,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'smarty'</span>] <span class="Operator">=</span> <span class="String">'smarty,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'blade'</span>]  <span class="Operator">=</span> <span class="String">'blade,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'eruby'</span>]  <span class="Operator">=</span> <span class="String">'eruby,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'scss'</span>]   <span class="Operator">=</span> <span class="String">'scss,css'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'jst'</span>]    <span class="Operator">=</span> <span class="String">'jst,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'less'</span>]   <span class="Operator">=</span> <span class="String">'less,css'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'html'</span>]   <span class="Operator">=</span> <span class="String">'html,angular'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'xhtml'</span>]  <span class="Operator">=</span> <span class="String">'html'</span>
 
 
 <span class="Comment">&quot; NERD_commenter      注释处理插件</span>
@@ -404,7 +398,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">let</span> <span class="Identifier">g:syntastic_check_on_open</span><span class="Operator">=</span><span class="Number">1</span>              <span class="Comment">&quot; 默认开启</span>
 <span class="Statement">let</span> <span class="Identifier">g:syntastic_mode_map</span><span class="Operator">=</span><span class="Delimiter">{</span><span class="String">'mode'</span>: <span class="String">'active'</span>,
 <span class="Special">            \</span><span class="String">'active_filetypes'</span>:  [],
-<span class="Special">            \</span><span class="String">'passive_filetypes'</span>: [<span class="String">'html'</span>, <span class="String">'css'</span>, <span class="String">'xhtml'</span>, <span class="String">'python'</span>, <span class="String">'eruby'</span>, <span class="String">'scss'</span>]
+<span class="Special">            \</span><span class="String">'passive_filetypes'</span>: [<span class="String">'html'</span>, <span class="String">'css'</span>, <span class="String">'xhtml'</span>, <span class="String">'eruby'</span>, <span class="String">'scss'</span>]
 <span class="Special">            \</span><span class="Delimiter">}</span>                               <span class="Comment">&quot; 指定不需要检查的语言</span>
 
 <span class="Comment">&quot; javascript-libraries-syntax JS类库语法高亮 &quot; 按需加载</span>
@@ -510,38 +504,16 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
         <span class="Statement">else</span>
             <span class="Statement">exec</span> <span class="String">&quot;!g++ -Wall -std=c++11 -o %:r %:t &amp;&amp; ./%:r&quot;</span>
         <span class="Statement">endif</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;d&quot;</span>
-        <span class="Statement">if</span> <span class="Identifier">g:isWIN</span>
-            <span class="Statement">exec</span> <span class="String">&quot;!dmd -wi -unittest %:t &amp;&amp; %:r.exe&quot;</span>
-        <span class="Statement">else</span>
-            <span class="Statement">exec</span> <span class="String">&quot;!dmd -wi -unittest %:t &amp;&amp; ./%:r&quot;</span>
-        <span class="Statement">endif</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;go&quot;</span>
-        <span class="Statement">if</span> <span class="Identifier">g:isWIN</span>
-            <span class="Statement">exec</span> <span class="String">&quot;!go build %:t &amp;&amp; %:r.exe&quot;</span>
-        <span class="Statement">else</span>
-            <span class="Statement">exec</span> <span class="String">&quot;!go build %:t &amp;&amp; ./%:r&quot;</span>
-        <span class="Statement">endif</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;java&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!javac %:t &amp;&amp; java %:r&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;scala&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!scalac %:t &amp;&amp; scala %:r&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;scheme&quot;</span> <span class="Operator">||</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;racket&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!racket -fi %:t&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;lisp&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!clisp -i %:t&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;lua&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!lua %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;php&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!php %:t&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;python&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!python %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;ruby&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!ruby %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;coffee&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!coffee %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;javascript&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!node %:t&quot;</span>
+    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;php&quot;</span>
+        <span class="Statement">exec</span> <span class="String">&quot;!php %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;sh&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!bash %:t&quot;</span>
     <span class="Statement">endif</span>
