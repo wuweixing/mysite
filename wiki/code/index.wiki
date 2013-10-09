@@ -6,13 +6,17 @@
 <center>
 <h2>
 [[cpp/index|C++]]
+[[lua/index|Lua]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
 [[javascript/index|JavaScript]]
+----
 [[web/index|Web]]
+[[mobile/index|Mobile]]
 ----
 [[csbase/index|CSBase]]
 [[algorithms/index|Algo]]
+[[math/index|Math]]
 [[database/index|DataBase]]
 [[tools/index|Tools]]
 [[other/index|Other]]
