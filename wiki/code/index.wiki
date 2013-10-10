@@ -9,7 +9,7 @@
 [[lua/index|Lua]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
-[[javascript/index|JavaScript]]
+[[node/index|Node]]
 ----
 [[web/index|Web]]
 [[mobile/index|Mobile]]

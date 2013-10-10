@@ -2,10 +2,10 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==Tools==
-----
 <center>
-<h2>
-[[vimwiki_primer|Vimwiki入门指南]]
-</h2>
-</center>
+<h3>
 ----
+[[vimwiki_primer|Vimwiki入门指南]]
+----
+</h3>
+</center>

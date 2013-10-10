@@ -2,9 +2,9 @@
 
 [[../../index|首页]] - [[../index|Code]]
 ==PHP==
-----
 <center>
-<h2>
+<h3>
+----
 [[static_keywords|Static关键字详解]]
 ----
 [[oop_system|PHP的对象系统]]
@@ -20,6 +20,6 @@
 [[laravel_base|Laravel基础]]
 ----
 [[laravel_artisan|Laravel artisan命令行工具]]
-</h2>
-</center>
 ----
+</h3>
+</center>
