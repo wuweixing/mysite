@@ -8,6 +8,7 @@
 <a href="mailto:my@ruchee.com"><img src="../public/images/email.gif"/ alt="my@ruchee.com" title="my@ruchee.com"></a>
 </h5>
 ----
+<div id="show_new" style="display:none;">
  == 最新日志 ==
 <h2>
 <center>
@@ -23,6 +24,7 @@
 </h2>
 ----
  == 全站目录 ==
+</div>
 <h2>
 [[journal/index|Journal]]
 [[works/index|Works]]
