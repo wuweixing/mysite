@@ -1,4 +1,0 @@
-%title Mobile Develop
-
-[[../../index|首页]] - [[../index|Code]]
-==Mobile Develop==

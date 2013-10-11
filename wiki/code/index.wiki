@@ -6,14 +6,8 @@
 <center>
 <h2>
 [[cpp/index|C++]]
-[[commonlisp/index|CL]]
-[[lua/index|Lua]]
-[[php/index|PHP]]
-[[ruby/index|Rb]]
 [[node/index|Node]]
-----
 [[web/index|Web]]
-[[mobile/index|Mobile]]
 ----
 [[csbase/index|CSBase]]
 [[algorithms/index|Algo]]
