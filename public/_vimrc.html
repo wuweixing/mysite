@@ -3,6 +3,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Ruchee的Vim配置文件</title>
+<link type="image/x-icon" rel="icon" href="images/ruchee.ico" />
+<link type="image/x-icon" rel="shortcut icon" href="images/ruchee.ico" />
 <meta name="Generator" content="Vim/7.4">
 <meta name="plugin-version" content="vim7.4_v1">
 <meta name="syntax" content="vim">
@@ -38,7 +40,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Comment">&quot; -----------------   Author: Ruchee</span>
 <span class="Comment">&quot; -----------------    Email: my@ruchee.com</span>
 <span class="Comment">&quot; -----------------  WebSite: <a href="http://www.ruchee.com">http://www.ruchee.com</a></span>
-<span class="Comment">&quot; -----------------     Date: 2013-10-08 12:51</span>
+<span class="Comment">&quot; -----------------     Date: 2013-10-17 17:13</span>
 <span class="Comment">&quot; -----------------     For Windows, Cygwin and Linux</span>
 <span class="Comment">&quot; -----------------  <a href="https://github.com/ruchee/vim">https://github.com/ruchee/vim</a></span>
 
@@ -180,6 +182,8 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Comment">&quot; yf字符                     --复制本行内容，直到遇到第一个指定字符 [包括该字符]</span>
 <span class="Comment">&quot; vf字符                     --选中本行内容，直到遇到第一个指定字符 [包括该字符]</span>
 <span class="Comment">&quot;</span>
+<span class="Comment">&quot; XT 和 XF 是 Xt/Xf 的反方向操作</span>
+<span class="Comment">&quot;</span>
 <span class="Comment">&quot; ---------- 便捷操作 ----------</span>
 <span class="Comment">&quot;</span>
 <span class="Comment">&quot; Ctrl + A                   --将当前光标所在数字自增1        [仅普通模式可用]</span>
@@ -189,12 +193,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Comment">&quot; Ctrl + X                   --多位置同时操作 [向下跳选]      [multiple-cursors插件]</span>
 <span class="Comment">&quot; m字符       and '字符      --标记位置 and 跳转到标记位置</span>
 <span class="Comment">&quot; q字符 xxx q and @字符      --录制宏   and 执行宏</span>
-
-<span class="Comment">&quot; ---------- Splitjoin.vim [代码形式转换插件] -----------------</span>
 <span class="Comment">&quot;</span>
-<span class="Comment">&quot; gJ                         --将多行代码集中成单行</span>
-<span class="Comment">&quot; gS                         --将单行代码扩展成多行</span>
-
 <span class="Comment">&quot; ---------- Vimwiki [Vim中的wiki/blog系统] ----------------</span>
 <span class="Comment">&quot;</span>
 <span class="Comment">&quot; 链接：[[链接地址|链接描述]]</span>
@@ -258,7 +257,6 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">set</span> <span class="PreProc">hlsearch</span>                 <span class="Comment">&quot; 开启高亮显示结果</span>
 <span class="Statement">set</span> <span class="PreProc">nowrapscan</span>               <span class="Comment">&quot; 搜索到文件两端时不重新搜索</span>
 <span class="Statement">set</span> <span class="PreProc">nocompatible</span>             <span class="Comment">&quot; 关闭兼容模式</span>
-<span class="Comment">&quot;set vb t_vb=                &quot; 关闭提示音 [会闪屏]</span>
 <span class="Statement">set</span> <span class="PreProc">hidden</span>                   <span class="Comment">&quot; 允许在有未保存的修改时切换缓冲区</span>
 <span class="Statement">set</span> <span class="PreProc">autochdir</span>                <span class="Comment">&quot; 设定文件浏览器目录为当前目录</span>
 <span class="Statement">set</span> <span class="PreProc">foldmethod</span>=syntax        <span class="Comment">&quot; 选择代码折叠类型</span>
@@ -270,7 +268,7 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">set</span> <span class="PreProc">nobackup</span>
 <span class="Statement">set</span> <span class="PreProc">list</span>                     <span class="Comment">&quot; 显示特殊字符，其中Tab使用高亮竖线代替，尾部空白使用高亮点号代替</span>
 <span class="Statement">set</span> <span class="PreProc">listchars</span>=tab<span class="Statement">:</span>\|\ ,trail<span class="Statement">:</span>.
-<span class="Statement">set</span> <span class="PreProc">expandtab</span>                <span class="Comment">&quot; 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]</span>
+<span class="Statement">set</span> <span class="PreProc">expandtab</span>                <span class="Comment">&quot; 将Tab自动转化成空格 [需要输入真正的Tab键时，使用 Ctrl+V + Tab]</span>
 <span class="Comment">&quot;set showmatch               &quot; 显示括号配对情况</span>
 <span class="Comment">&quot;set nowrap                  &quot; 设置不自动换行</span>
 
@@ -371,12 +369,13 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'php'</span>]    <span class="Operator">=</span> <span class="String">'php,html'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'smarty'</span>] <span class="Operator">=</span> <span class="String">'smarty,html'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'blade'</span>]  <span class="Operator">=</span> <span class="String">'blade,html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'twig'</span>]   <span class="Operator">=</span> <span class="String">'twig,html'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'eruby'</span>]  <span class="Operator">=</span> <span class="String">'eruby,html'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'scss'</span>]   <span class="Operator">=</span> <span class="String">'scss,css'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'jst'</span>]    <span class="Operator">=</span> <span class="String">'jst,html'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'less'</span>]   <span class="Operator">=</span> <span class="String">'less,css'</span>
-<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'html'</span>]   <span class="Operator">=</span> <span class="String">'html,angular'</span>
 <span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'xhtml'</span>]  <span class="Operator">=</span> <span class="String">'html'</span>
+<span class="Statement">let</span> <span class="Identifier">g:snipMate</span><span class="Operator">.</span>scope_aliases[<span class="String">'html'</span>]   <span class="Operator">=</span> <span class="String">'html,angular'</span>
 
 
 <span class="Comment">&quot; NERD_commenter      注释处理插件</span>
@@ -398,11 +397,8 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">let</span> <span class="Identifier">g:syntastic_check_on_open</span><span class="Operator">=</span><span class="Number">1</span>              <span class="Comment">&quot; 默认开启</span>
 <span class="Statement">let</span> <span class="Identifier">g:syntastic_mode_map</span><span class="Operator">=</span><span class="Delimiter">{</span><span class="String">'mode'</span>: <span class="String">'active'</span>,
 <span class="Special">            \</span><span class="String">'active_filetypes'</span>:  [],
-<span class="Special">            \</span><span class="String">'passive_filetypes'</span>: [<span class="String">'html'</span>, <span class="String">'css'</span>, <span class="String">'xhtml'</span>, <span class="String">'eruby'</span>, <span class="String">'scss'</span>]
+<span class="Special">            \</span><span class="String">'passive_filetypes'</span>: [<span class="String">'html'</span>, <span class="String">'css'</span>, <span class="String">'xhtml'</span>, <span class="String">'eruby'</span>, <span class="String">'scss'</span>, <span class="String">'less'</span>]
 <span class="Special">            \</span><span class="Delimiter">}</span>                               <span class="Comment">&quot; 指定不需要检查的语言</span>
-
-<span class="Comment">&quot; javascript-libraries-syntax JS类库语法高亮 &quot; 按需加载</span>
-<span class="Statement">let</span> <span class="Identifier">g:used_javascript_libs</span><span class="Operator">=</span><span class="String">'jquery,angularjs'</span>
 
 
 <span class="Comment">&quot; ======= 自定义快捷键 ======= &quot;</span>
@@ -512,8 +508,6 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
         <span class="Statement">exec</span> <span class="String">&quot;!coffee %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;javascript&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!node %:t&quot;</span>
-    <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;php&quot;</span>
-        <span class="Statement">exec</span> <span class="String">&quot;!php %:t&quot;</span>
     <span class="Statement">elseif</span> &amp;<span class="Statement">filetype</span> <span class="Operator">==</span> <span class="String">&quot;sh&quot;</span>
         <span class="Statement">exec</span> <span class="String">&quot;!bash %:t&quot;</span>
     <span class="Statement">endif</span>
@@ -529,16 +523,12 @@ body { font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 <span class="Statement">nmap</span> <span class="Delimiter">&lt;</span><span class="Special">leader</span><span class="Delimiter">&gt;</span>T :LoadTemplate<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;&lt;</span><span class="Special">ESC</span><span class="Delimiter">&gt;</span>:AuthorInfoDetect<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;&lt;</span><span class="Special">ESC</span><span class="Delimiter">&gt;</span>Gi
 <span class="Statement">vmap</span> <span class="Delimiter">&lt;</span><span class="Special">leader</span><span class="Delimiter">&gt;</span>T <span class="Delimiter">&lt;</span><span class="Special">ESC</span><span class="Delimiter">&gt;</span>:LoadTemplate<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;&lt;</span><span class="Special">ESC</span><span class="Delimiter">&gt;</span>:AuthorInfoDetect<span class="Delimiter">&lt;</span><span class="Special">CR</span><span class="Delimiter">&gt;&lt;</span><span class="Special">ESC</span><span class="Delimiter">&gt;</span>Gi
 
-
 <span class="Comment">&quot; ======= Vimwiki ======= &quot;</span>
 
 <span class="Statement">let</span> <span class="Identifier">g:vimwiki_w32_dir_enc</span><span class="Operator">=</span><span class="String">'utf-8'</span> <span class="Comment">&quot; 设置编码</span>
-
 <span class="Statement">let</span> <span class="Identifier">g:vimwiki_use_mouse</span><span class="Operator">=</span><span class="Number">1</span>         <span class="Comment">&quot; 使用鼠标映射</span>
-
-<span class="Comment">&quot; 声明可以在wiki里面使用的HTML标签</span>
 <span class="Statement">let</span> <span class="Identifier">g:vimwiki_valid_html_tags</span> <span class="Operator">=</span> <span class="String">'a,img,b,i,s,u,sub,sup,br,hr,div,del,code,red,center,left,right,h1,h2,h3,h4,h5,h6,pre,script,style'</span>
-
+<span class="Comment">                                  &quot; 声明可以在wiki里面使用的HTML标签</span>
 <span class="Statement">let</span> <span class="Identifier">blog</span> <span class="Operator">=</span> <span class="Delimiter">{}</span>
 <span class="Statement">if</span> <span class="Identifier">g:isWIN</span>
     <span class="Statement">if</span> <span class="Identifier">g:atCompany</span>

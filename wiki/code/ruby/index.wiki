@@ -1,0 +1,21 @@
+%title Ruby
+
+[[../../index|首页]] - [[../index|Code]]
+==Ruby==
+----
+<center>
+<h2>
+[[cmd|Ruby和Rails常用命令]]
+----
+[[base|Ruby语言基础]]
+----
+[[tk|Tk基础]]
+----
+[[blog|一个博客的实现]]
+----
+[[ubuntu_ror|Ubuntu下Ruby on Rails开发环境的安装]]
+----
+[[issues|问题集锦]]
+</h2>
+</center>
+----
