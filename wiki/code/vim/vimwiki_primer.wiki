@@ -1,0 +1,227 @@
+%title Vimwiki入门指南
+%template code_discuss
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Vim]]
+==Vimwiki入门指南==
+----
+===引子===
+
+两年前，我刚开始接触 `Vim` 时曾写过一篇 `Vimwiki` 的入门教程（`https://github.com/ruchee/backup2/blob/master/code/linux/vim/vimwiki_primer.wiki`）
+
+只是那是基于 `1.x` 版本的，而且很多地方都没有细说，并不适合新手
+
+今天闲来无事，重作一篇以回馈社区
+
+顺便说一句，本博客所有页面均由 `Vimwiki` 生成
+----
+===使用前提===
+
+# 熟悉 `Vim` 的基本命令 （这个必须有，如果不熟悉的话，先把 `Vim` 自带的 `tutor` 练习几遍吧，只需掌握最基本的几个命令即可）
+# 喜欢用纯文本写日志 （没有此喜好的就不要用 `Vimwiki` 来虐自己了，各种开源博客系统遍地都是）
+----
+===安装Vimwiki===
+
+`Vim` 的基础知识以及基本概念这儿就不提了，下面是安装步骤：
+
+`1`、`Vim` 肯定是必须的啦，`Windows` 可以安装 `gVim`（`Vim` 官网被墙，可上 `http://vim.wendal.net/download.php#pc` 下载），`Linux` 用各种包管理系统搞定
+
+`2`、上 `https://github.com/vimwiki/vimwiki/releases` 下载最新的版本，将其拷贝到 `vimfiles` 目录下（`Linux` 为 `~/.vim`）<br/>
+如果你使用的是 `pathogen` 包管理器，则拷贝到 `vimfiles/bundle/vimwiki` 路径下（`Linux` 为 `~/.vim/bundle/vimwiki`）
+
+`3`、将以下语句写入你的 `_vimrc` 文件（`Linux` 为 `.vimrc`）
+{{{class="brush: vim"
+
+" ======= 通用配置 ======
+set nocompatible   " 关闭兼容模式
+filetype plugin on " 针对不同的文件类型加载对应的插件
+syntax on          " 开启文件类型侦测
+
+" ======= 判断操作系统类型 =======
+if(has("win32") || has("win64"))
+    let g:isWIN = 1
+else
+    let g:isWIN = 0
+endif
+
+" ======= Vimwiki =======
+
+let g:vimwiki_w32_dir_enc='utf-8' " 设置编码
+let g:vimwiki_use_mouse=1         " 使用鼠标映射
+
+" 声明可以在wiki里面使用的HTML标签
+let g:vimwiki_valid_html_tags = 'a,img,b,i,s,u,sub,sup,br,hr,div,del,code,red,center,left,right,h1,h2,h3,h4,h5,h6,pre,script,style'
+
+" 创建站点
+let blog = {}
+if g:isWIN
+    let blog.path          = 'D:/Ruchee/Files/mysite/wiki/'
+    let blog.path_html     = 'D:/Ruchee/Files/mysite/html/'
+    let blog.template_path = 'D:/Ruchee/Files/mysite/templates/'
+else
+    let blog.path          = '~/mysite/wiki/'
+    let blog.path_html     = '~/mysite/html/'
+    let blog.template_path = '~/mysite/templates/'
+endif
+let blog.template_default  = 'site'
+let blog.template_ext      = '.html'
+let blog.auto_export       = 1
+
+" 加载站点
+let g:vimwiki_list = [blog]
+}}}
+
+下面是针对上述配置的简要说明
+* `let g:isWIN = x`：这是用来自动判断操作系统的，这对经常在 `Windows` 和 `Linux` 之间游弋的人来说（譬如我），就不需要频繁地去修改各个配置了
+* `let g:vimwiki_valid_html_tags`：声明不需要 `Vimwiki` 编译的 `HTML` 标签
+* `let xxx = {}`：创建一个 `wiki` 站点，`xxx` 这个名字你可以自己随意定义
+* `let xxx.path`：指定 `wiki` 源文件的存放目录（因为 `Vimwiki` 就相当于一个编译器，它将其自己的语法翻译成 `HTML` 代码）
+* `let xxx.path_html`：指定编译后的 `HTML` 页面存放的目录
+* `let xxx.template_path`：指定模板文件的存放目录
+* `let xxx.template_default`：指定默认模板，不需要写后缀
+* `let xxx.template_ext`：指定模板文件的后缀（知道为什么 `let xxx.template_default` 不需要写后缀了吧）
+* `let xxx.auto_export=1`：在保存源文件时自动编译，如果不希望自动编译，可将其设为 `0`
+* `let g:vimwiki_list = [xxx]`：告诉 `Vimwiki` 你需要加载哪些站点，这也就是说，你可以建立多个站哦
+
+上面是所展示的内容是从我自己的配置文件里面摘录出来的，你自己则需要根据所使用的操作系统平台（`Windows` or `Linux`）建立相应的文件夹（`wiki`、`html`、`templates`），并将上述配置里面的路径替换成你自己本机的实际路径（有点绕是吧？但应该不影响理解，你懂就行）
+----
+===小试牛刀===
+
+访问 `https://github.com/ruchee/mysite`，将这个项目整个 `copy` 下来（会 `Git` 的我就不多说了，不会 `Git` 的右侧有 `Download ZIP` 按钮）
+
+这是我博客的全部源代码，如果你想马上看一看 `Vimwiki` 到底是怎么工作的，那就按下面的步骤来吧：
+# 将上一小节的配置原封不动地拷贝到你的 `_vimrc`（`Linux` 为 `.vimrc`）
+# 如果你用的是 `Windows`，则新建 `D:\Ruchee\Files\mysite` 目录；如果你用的是 `Linux`，则新建 `~/mysite` 目录
+# 将我博客的 `public`、`templates`、`wiki` 这三个目录全部拷贝到你刚建的 `mysite` 目录下，并新建一个 `html` 文件夹
+# 进入 `wiki` 目录，使用 `Vim` 打开 `index.wiki` 文件
+# 在命令模式下键入 `:VimwikiAll2HTML`，然后回车，你会看到 `Vimwiki` 已经在开始编译了
+# 等编译完成，进入 `html` 目录，用浏览器打开 `index.html` 文件，然后，然后你就会看到我博客跑在你自己的电脑上啦。哇哇哇，多神奇
+----
+===基础讲解===
+
+学编程的都知道，看代码+写代码永远是进步最快的学习方式，`Vimwiki` 也一样，你可以一边参考我博客 `wiki` 文件的写法，一边自己实践
+
+* 本教程对应的 `wiki` 源文件在线浏览地址：<a href="https://raw.github.com/ruchee/mysite/master/wiki/code/tools/vimwiki_primer.wiki" target="_blank">https://raw.github.com/ruchee/mysite/master/wiki/code/tools/vimwiki_primer.wiki</a>
+* 与本教程匹配的 `Vim` 配置在线浏览地址：<a href="https://raw.github.com/ruchee/vim/master/_vimrc" target="_blank">https://raw.github.com/ruchee/vim/master/_vimrc</a>
+
+`Vimwiki` 只是个标记转换器，最终将转换成 `HTML` 代码，默认使用的是一种和 `Markdown` 类似的标记语言，但更好用（也许是用习惯了，我对 `Markdown` 可以说是丝毫无爱）
+
+（`Vimwiki` 现在也支持用 `Markdown` 来写作了，只需将站点的配置项设置成下面的形式即可）：
+{{{class="brush: vim"
+let blog        = {}
+let blog.syntax = 'markdown'
+let blog.ext    = '.md'
+" .... 其他配置
+let g:vimwiki_list = [blog]
+}}}
+
+下面是我最常用的几个标签，余者请参考安装包自带的官方文档（下面的绝大部分内容援引自上一版本的教程，人懒了啊，没办法。。）
+
+* `%title xxxx`：设定页面的标题，如本页面顶部的 `%title Vimwiki入门教程`
+* `==二级标题==`：二级标题，我一般用来标识文章标题（如果行首空一个空格则会居中，适用于所有标题标签），如本页面头部的 `==Vimwiki入门教程==`
+* `===三级标题===`：三级标题，我一般用来标识文章里面的各个子标题
+* `======六级标题====`：六级标签，我用来标记时间（标题标签共 `6` 个，对应于等于号的个数，六级标签字体最小，一级标签字体最大）
+* `[[链接地址|链接标题]]`：创建链接，如本页首部的 `首页 - Code - Tools`，其对应写法为 `[[../../index|首页]] - [[../index|Code]] - [[index|Tools]]`。如果我想贴个 [[http://www.google.com|Google]] 首页的链接，可以这样写 `[[http://www.google.com|Google]]`
+* `[[转向地址|{{图片地址}}]]`：本博首页的头像是这样写的 `[[index|{{../public/images/ruchee.jpg}}]]`，这样就会显示对应的图片，而点击图片就会转到首页。如果不需要转向，直接写 `{{图片地址}}` 即可，还可以在图片地址后面加两个竖线以添加属性，如 `{{../../../public/images/me/ruchee01.jpg||width="400px" height="530px"}}`
+* `----`：四条小横线相当于 `<hr>` 标签，会出现一条本博客到处可见的横线
+* `{{{ 程序代码或不需要编译的内容 }}}`：三个大括号用来书写程序代码或其他不想被编译的内容
+* `两个反引号`（这儿不便写演示代码，反引号一般位于键盘数字键 `1` 的左边）：相当于 `<code>` 与 `</code>` 标签对，显示效果就是本页随处可见的绿色荧光字
+
+常用命令
+
+# `\ww`：打开 `wiki` 站点首页
+# `:Vimwiki2HTML`：将当前页面编译成 `HTML` 文件
+# `:VimwikiAll2HTML`：将本 `wiki` 所有源文件编译成 `HTML`（如果文件很多，将花费较长时间）
+# `:VimwikiGoto`：转到指定的 `wiki` 页面
+# `:VimwikiIndex`：转到 `wiki` 首页
+# `:VimwikiSearch /Ruchee/`：搜索指定关键字，`:cnext` 跳到下一个，`:cprevious` 跳到上一个
+# `:VimwikiTable 2 3`：插入一个 `2` 行 `3` 列的表格
+# `:VimwikiDeleteLink`：删除当前页面
+
+更多命令及其使用方法请参考 `Vimwiki` 自带的帮助文件，使用命令 `:help vimwiki`
+----
+===添加代码高亮===
+
+作为程序员，如果一个博客系统不支持语法高亮的话，估计写起技术文章来也没多大意思，下面是语法高亮的实现步骤，使用的是 `SyntaxHighlighter`
+
+（事实上，如果你前面下载了我博客的源码，你会发现里面已经装上 `SyntaxHighlighter` 了，不过下面还是将过程讲解一遍）
+
+# 首先上 `http://alexgorbatchev.com/SyntaxHighlighter/download/` 下载合适的版本，尽管 `3.x` 出来老久了，但我觉得还是 `2.x` 好用一些，下面的讲解基于 `2.0.278`
+# 将下载到的文件解压放到 `mysite/public/SyntaxHighlighter` 目录下，只需 `scripts` 和 `styles` 两个文件夹，余者可删除
+# 打开 `wiki` 的模板文件，如 `mysite/templates/site.html`，在 `</head>` 标签之前书写以下代码：
+{{{class="brush: html"
+<!-- SyntaxHighlighter -->
+<script src="%root_path%../public/SyntaxHighlighter/scripts/shCore.js"></script>
+<script src="%root_path%../public/SyntaxHighlighter/scripts/shBrushCpp.js"></script>
+<link type="text/css" rel="stylesheet" href="%root_path%../public/SyntaxHighlighter/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="%root_path%../public/SyntaxHighlighter/styles/shThemeMidnight.css"/>
+<script>
+    SyntaxHighlighter.config.clipboardSwf = '%root_path%../public/SyntaxHighlighter/scripts/clipboard.swf';
+    SyntaxHighlighter.all();
+</script>
+
+<!-- 第一行是引入核心文件 -->
+<!-- 第二行是引入语法高亮文件（可视需要书写多条，具体可查看 scripts 文件夹下的各个文件） -->
+<!-- 更多语法高亮请访问 https://github.com/ruchee/backup2/tree/master/scripts 获取 -->
+<!-- 第三行是引入基本 CSS 文件 -->
+<!-- 第四行是指定使用的颜色主题（更多主题可查看 styles 文件夹） -->
+
+<!-- %root_path% 指代的是 HTML 代码根目录 -->
+}}}
+# 在 `wiki` 目录下新建一个 `test.wiki` 文件，写入以下内容：
+{{{class="brush: html"
+经典 `Hello, World` 程序演示：
+{{{class="brush: c"
+#include <stdio.h>
+
+int main (int argc, char* argv[])
+{
+    printf("Hello, World\n");
+    
+    return 0;
+}
+\}}}  <!-- 此处的反斜线是本教程为阻止标签生效而添加的，实际使用时不要添加反斜线 -->
+}}}
+# 在命令模式下键入 `:Vimwiki2HTML` 执行编译
+# 打开 `mysite/html` 目录下的 `test.html` 文件，如果没什么差错，你就会看到代码高亮的显示效果啦
+
+为了避免添加或删除高亮语法时需要重新编译，我博客是将各个语法高亮文件的内容集成到了一个单独的文件 `shBrushAll.js` 里面了，所以这里演示的和我博客实际所用的略有出入
+
+`SyntaxHighlighter` 的使用也就这么简单，相信我也没必要多废话了，我知道你很聪明的 `^-^`
+----
+===添加文章评论功能===
+
+这个嘛，有最好，没有也没事，下面是国内 `友言` 与 `Vimwiki` 的集成示例，其他的提供商用起来也大同小异，就不一一演示了
+
+# 首先访问 `http://www.uyan.cc/` 注册账户，按其要求填写好相关信息
+# 然后访问 `http://www.uyan.cc/getcode` 获取代码，将其提供的代码复制到剪贴板
+# 打开 `mysite/templates/site.html` 模板文件，将友言的代码放置到 `</body>` 标签之前，然后保存
+# 打开 `Vim`，用 `\ww` 祭出你的 `wiki` 首页，然后键入命令 `:VimwikiAll2HTML` 全部重新编译
+# 编译完成就 `OK` 啦（不过你本地是看不到评论框的哦，得上传到服务器才能看到）
+
+有观众就说了，我不想每个页面都显示评论框怎么办
+
+这个好办，将 `site.html` 模板复制一份命名为 `discuss.html` ，然后 `discuss.html` 里面放置评论代码，而 `site.html` 里面不放置
+
+对于想显示评论框的页面，只需在顶部书写一句 `%template discuss` 即可，这样该页面编译时使用的就是带有评论代码的 `discuss.html` 模板啦
+----
+===添加站点统计代码===
+
+这个就更容易啦，这儿以淘宝旗下的 `量子统计` 为例（因为我博客就是用的它，免费的，很好用，推荐）
+
+# 注册账号肯定是必须的嘛，`量子统计` 官方网址为 `http://www.linezing.com/login2.php`（别进错地址哦，我们只用普通的统计，不是店铺统计）
+# 然后依然是填写信息，获取代码，这儿略过不细说
+# 将统计代码拷贝到你 `wiki` 模板的 `</body>` 之前，然后重新编译全部页面就 `O` 啦，很简单吧 `^-^`
+----
+===后记===
+
+本来还有不少内容要写的，只是马上就下班了，就不多废话了，以上内容入门已经足够了
+
+* `Vimwiki` 的使用建议请访问（很久以前写的，依然有用）：`https://github.com/ruchee/backup2/blob/master/code/linux/vim/vimwiki_tips.wiki`
+* 将 `Vimwiki` 部署到 `Github Pages`：`https://github.com/ruchee/backup2/blob/master/code/tools/git/github_pages.wiki`
+* `Vim` 使用一周年纪念：`https://github.com/ruchee/backup2/blob/master/code/linux/vim/vim_one_year.wiki`
+* `Vim` 开发 `GTK+` 应用演示（很久以前录的一个小视频，与本文没多大关系，随便看看吧）：`https://raw.github.com/ruchee/backup2/master/images/vim_gtk.gif`
+
+本博客 `CSS` 文件修改自 <a href="http://wiki.ktmud.com/" target="_blank">丘迟的维基世界</a>，特表感谢
+----
+<red>date</red> : 2013-08-14
+----

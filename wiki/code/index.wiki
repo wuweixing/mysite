@@ -1,0 +1,21 @@
+%title 编码人生
+
+[[../index|首页]]
+==编码人生==
+----
+<center>
+<h2>
+[[cpp/index|C++]]
+[[php/index|PHP]]
+[[lua/index|Lua]]
+[[javascript/index|JavaScript]]
+[[web/index|Web]]
+----
+[[algorithms/index|Algo]]
+[[csbase/index|CSBase]]
+[[database/index|DataBase]]
+[[vim/index|Vim]]
+[[other/index|Other]]
+</h2>
+</center>
+----

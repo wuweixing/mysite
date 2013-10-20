@@ -1,0 +1,4 @@
+%title DataBase
+
+[[../../index|首页]] - [[../index|Code]]
+==DataBase==

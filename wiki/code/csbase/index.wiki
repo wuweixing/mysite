@@ -1,0 +1,4 @@
+%title CSBase
+
+[[../../index|首页]] - [[../index|Code]]
+==CSBase==
