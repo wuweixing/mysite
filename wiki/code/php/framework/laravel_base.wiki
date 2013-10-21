@@ -1,7 +1,7 @@
 %title Laravel基础
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Framework]]
 ==Laravel基础==
 ----
 ===基本===

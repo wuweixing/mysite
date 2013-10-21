@@ -1,7 +1,7 @@
 %title Static关键字详解
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Base]]
 ==Static关键字详解==
 ----
 ===用于函数===

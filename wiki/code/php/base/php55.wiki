@@ -1,7 +1,7 @@
 %title PHP5.5新特性
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Base]]
 ==PHP5.5新特性==
 ----
 # 新增函数 `boolval`，补全了 `xxxval` 函数家族（`intval`、`floatval`、`strval`）

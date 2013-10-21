@@ -1,7 +1,7 @@
 %title Laravel artisan命令行工具
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Framework]]
 ==Laravel artisan命令行工具==
 ----
 ===全局相关===

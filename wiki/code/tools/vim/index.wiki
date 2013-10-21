@@ -1,6 +1,6 @@
 %title Vim
 
-[[../../index|首页]] - [[../index|Code]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|Tools]]
 ==Vim==
 ----
 <center>

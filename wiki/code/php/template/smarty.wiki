@@ -1,7 +1,7 @@
 %title Smarty模板引擎
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Template]]
 ==Smarty模板引擎==
 ----
 ===核心规律===

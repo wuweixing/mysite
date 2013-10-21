@@ -1,0 +1,11 @@
+%title Tools
+
+[[../../index|首页]] - [[../index|Code]]
+==Tools==
+----
+<center>
+<h2>
+[[vim/index|Vim]]
+</h2>
+</center>
+----

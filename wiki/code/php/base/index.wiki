@@ -1,0 +1,21 @@
+%title 语言基础
+
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]]
+==语言基础==
+----
+<center>
+<h2>
+[[static_keywords|Static关键字详解]]
+----
+[[oop_system|PHP的对象系统]]
+----
+[[php55|PHP5.5新特性]]
+----
+[[basic_review|PHP基础复习]]
+----
+[[func_math|PHP数学函数]]
+----
+[[func_string|PHP字符串处理函数]]
+</h2>
+</center>
+----

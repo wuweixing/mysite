@@ -1,7 +1,7 @@
 %title PHP基础复习
 %template code
 
-[[../../index|首页]] - [[../index|Code]] - [[index|PHP]]
+[[../../../index|首页]] - [[../../index|Code]] - [[../index|PHP]] - [[index|Base]]
 ==PHP基础复习==
 ----
 ===预定义常量===

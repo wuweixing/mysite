@@ -7,14 +7,13 @@
 <h2>
 [[cpp/index|C++]]
 [[php/index|PHP]]
-[[lua/index|Lua]]
 [[javascript/index|JavaScript]]
 [[web/index|Web]]
 ----
 [[algorithms/index|Algo]]
 [[csbase/index|CSBase]]
 [[database/index|DataBase]]
-[[vim/index|Vim]]
+[[tools/index|Tools]]
 [[other/index|Other]]
 </h2>
 </center>
