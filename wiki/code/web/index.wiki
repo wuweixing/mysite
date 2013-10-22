@@ -1,4 +1,0 @@
-%title Web Development
-
-[[../../index|首页]] - [[../index|Code]]
-==Web Development==

@@ -1,4 +1,0 @@
-%title Other
-
-[[../../index|首页]] - [[../index|Code]]
-==Other==
