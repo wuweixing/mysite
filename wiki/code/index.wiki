@@ -1,0 +1,24 @@
+%title 编程人生
+
+[[../index|首页]]
+==编程人生==
+----
+<center>
+<h2>
+[[cpp/index|C++]]
+[[ruby/index|Rb]]
+[[coffeescript/index|Coffee]]
+[[javascript/index|JavaScript]]
+----
+[[rails/index|Rails]]
+[[sinatra/index|Sinatra]]
+[[angularjs/index|AngularJS]]
+[[bootstrap/index|Bootstrap]]
+----
+[[algorithms/index|Algorithms]]
+[[cspf/index|CSPF]]
+[[base/index|Bash]]
+[[vim/index|Vim]]
+</h2>
+</center>
+----

@@ -11,7 +11,7 @@
 <h2>
 [[journal/index|Journal]]
 [[works/index|Works]]
-<a href="http://ruchee.is-programmer.com/" target="_blank">Code</a>
+[[code/index|Code]]
 <a href="http://hathway.ruchee.com" target="_blank">GF</a>
 </h2>
 </center>

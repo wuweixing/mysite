@@ -1,0 +1,4 @@
+%title Algorithms
+
+[[../../index|首页]] - [[../index|Code]]
+==Algorithms==

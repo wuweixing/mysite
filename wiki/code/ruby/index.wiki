@@ -1,0 +1,4 @@
+%title Ruby Programming Language
+
+[[../../index|首页]] - [[../index|Code]]
+==Ruby Programming Language==

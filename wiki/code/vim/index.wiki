@@ -1,0 +1,13 @@
+%title Vim - A Programmer's Editor
+
+[[../../index|首页]] - [[../index|Code]]
+==Vim - A Programmer's Editor==
+----
+<center>
+<h2>
+[[vimwiki_primer|Vimwiki入门指南]]
+----
+[[vimium|Vimium浏览器插件]]
+</h2>
+</center>
+----
