@@ -1,4 +1,0 @@
-%title Bootstrap Framework
-
-[[../../index|首页]] - [[../index|Code]]
-==Bootstrap Framework==

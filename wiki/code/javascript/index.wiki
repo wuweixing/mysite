@@ -1,4 +1,0 @@
-%title JavaScript Programming Language
-
-[[../../index|首页]] - [[../index|Code]]
-==JavaScript Programming Language==

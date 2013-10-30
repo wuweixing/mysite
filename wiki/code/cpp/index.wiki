@@ -1,4 +1,0 @@
-%title C/C++ Programming Language
-
-[[../../index|首页]] - [[../index|Code]]
-==C/C++ Programming Language==

@@ -1,4 +1,0 @@
-%title Rails Web Framework
-
-[[../../index|首页]] - [[../index|Code]]
-==Rails Web Framework==
