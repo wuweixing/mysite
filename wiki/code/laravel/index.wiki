@@ -1,4 +1,4 @@
-%title PHP
+%title Laravel
 
 [[../../index|首页]] - [[../index|Code]]
-==PHP==
+==Laravel==

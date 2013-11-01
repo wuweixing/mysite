@@ -1,4 +1,4 @@
-%title PHP
+%title Sinatra
 
 [[../../index|首页]] - [[../index|Code]]
-==PHP==
+==Sinatra==

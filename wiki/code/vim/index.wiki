@@ -6,6 +6,8 @@
 <center>
 <h2>
 [[vimwiki_primer|Vimwiki入门指南]]
+----
+[[learn_vimscript_the_hard_way|《Learn Vimscript the Hard Way》阅读笔记]]
 </h2>
 </center>
 ----

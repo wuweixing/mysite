@@ -1,4 +1,4 @@
-%title PHP
+%title Bash
 
 [[../../index|首页]] - [[../index|Code]]
-==PHP==
+==Bash==
