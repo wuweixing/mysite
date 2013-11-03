@@ -1,4 +1,0 @@
-%title CoffeeScript
-
-[[../../index|首页]] - [[../index|Code]]
-==CoffeeScript==

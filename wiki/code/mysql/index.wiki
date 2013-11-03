@@ -1,4 +1,0 @@
-%title MySQL
-
-[[../../index|首页]] - [[../index|Code]]
-==MySQL==

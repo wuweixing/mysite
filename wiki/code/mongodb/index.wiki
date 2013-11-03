@@ -1,4 +1,0 @@
-%title MongoDB
-
-[[../../index|首页]] - [[../index|Code]]
-==MongoDB==

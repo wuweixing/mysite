@@ -1,4 +1,0 @@
-%title HTML5
-
-[[../../index|首页]] - [[../index|Code]]
-==HTML5==
