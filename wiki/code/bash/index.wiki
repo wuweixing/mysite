@@ -1,0 +1,4 @@
+%title Bash
+
+[[../../index|首页]] - [[../index|Code]]
+==Bash==

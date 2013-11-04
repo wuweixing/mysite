@@ -1,0 +1,92 @@
+%title Vim自动事件列表
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Vim]]
+==Vim自动事件列表==
+
+* `BufAdd or BufCreate`：缓冲区列表加入缓冲区后，可以是刚建立的新缓冲区或者是已有的缓冲区
+* `BufDelete`：缓冲区列表删除缓冲区前
+* `BufEnter`：进入缓冲区后，也在开始编辑缓冲区时执行，发生在 `BufReadPost` 之后
+* `BufFilePost`：`:file` 或 `:saveas` 命令改变当前缓冲区的名字后
+* `BufFilePre`：`:file` 或 `:saveas` 命令改变当前缓冲区的名字前
+* `BufHidden`：缓冲区刚被隐藏后。也就是说，没有窗口显示该缓冲区，但是它没有被卸载或者删除
+* `BufLeave`：转到别的缓冲区前、或离开/关闭当前窗口并且新的当前窗口编辑的不是相同的缓冲区前
+* `BufNew`：刚建立新缓冲区或给缓冲区换名后，缓冲区被加到缓冲区列表时，同时会激活 `BufAdd` 事件
+* `BufNewFile`：开始编辑尚未存在的文件时
+* `BufRead or BufReadPost`：开始编辑新的缓冲区并把文件读入缓冲区后，执行模式行之前
+* `BufReadCmd`：开始编辑新的缓冲区前
+* `BufReadPre`：开始编辑新的缓冲区并把文件读入缓冲区前，如果文件还不存在，不会有此事件
+* `BufUnload`：缓冲区卸载前，可在 `BufWritePost` 后和 `BufDelete` 前发生，`Vim` 即将退出时，每个载入的缓冲区也会收到该事件
+* `BufWinEnter`：窗口显示缓冲区后，可以是新缓冲区载入或者隐藏缓冲区在窗口开始显示
+* `BufWinLeave`：窗口删除缓冲区前，除非它在别的窗口仍然可见，系统退出时也会激活，在 `BufUnload` 或 `BufHidden` 之前激活
+* `BufWipeout`：完全删除缓冲区前，可能先调用 `BufUnload` 和 `BufDelete` 事件 (如果缓冲区已经载入并且在缓冲区列表之中的话)，也在不在缓冲区列表的某个缓冲区换名之前发生
+* `BufWrite or BufWritePre`：把整个缓冲区写回到文件前
+* `BufWriteCmd`：把整个缓冲区写回到文件前
+* `BufWritePost`：把整个缓冲区写回到文件后
+* `CmdwinEnter`：进入命令行窗口后
+* `CmdwinLeave`：退出命令行窗口前，可用来清除任何 `CmdwinEnter` 所做的全局设置
+* `ColorScheme`：载入色彩方案后
+* `CompleteDone`：插入模式补全结束之后，不管补会是否成功完成或是被放弃都会激活本事件
+* `CursorHold`：用户在 `updatetime` 指定的时间里没有按键时，如果用户还没有按键，该事件不会再次激活。该事件只有在普通模式才会激活，等待输入命令参数或操作符之后的动作命令时，该事件不会发生，记录时，不激活 `CursorHold` 事件
+* `CursorHoldI`：类似于 `CursorHold`，但用于插入模式
+* `CursorMoved`：在普通或可视模式下移动光标后，也用于光标行的文本被改变时
+* `CursorMovedI`：在插入模式下移动光标后，但有弹出菜单时不激活，其余细节和 `CursorMoved` 相同
+* `EncodingChanged`：改变 `encoding` 选项后激活，可用于设定字体
+* `FileAppendCmd`：附加到文件前
+* `FileAppendPost`：附加到文件后
+* `FileAppendPre`：附加到文件前
+* `FileChangedRO`：刚开始修改只读文件前
+* `FileChangedShell`：`Vim` 注意到文件的修改时间不同于编辑开始的时间或者文件属性发生改变时
+* `FileChangedShellPost`：对外部改变的文件的处理完成后，可用于更新状态行
+* `FileEncoding`：已废弃。仍可用并等价于 `EncodingChanged`
+* `FileReadCmd`：`:read` 命令读入文件前
+* `FileReadPost`：`:read` 命令读入文件后
+* `FileReadPre`：`:read` 命令读入文件前
+* `FileType`：设置 `filetype` 选项时
+* `FileWriteCmd`：写入文件前，但不包括写入整个缓冲区
+* `FileWritePost`：写入文件后，但不包括写入整个缓冲区
+* `FileWritePre`：写入文件前，但不包括写入整个缓冲区
+* `FilterReadPost`：过滤命令读入文件后，`Vim` 用当前缓冲区的名字来匹配模式，正如 `FilterReadPre` 那样
+* `FilterReadPre`：过滤命令读入文件前
+* `FilterWritePost`：过滤命令写入文件或产生 `diff` 文件后，`Vim` 用当前缓冲区的名字来匹配模式，正如 `FilterWritePre` 那样
+* `FilterWritePre`：过滤程序写入文件或产生 `diff` 文件前
+* `FocusGained`：`Vim` 取得输入焦点时，只有 `GUI` 和少数几个控制台版本能检测该事件
+* `FocusLost`：`Vim` 失去输入焦点时，只有 `GUI` 和少数几个控制台版本能检测该事件，也有可能在弹出对话框时发生
+* `FuncUndefined`：调用未定义的用户函数时，可以用来实现在实际调用时才提供动态定义的函数
+* `GUIEnter`：成功启动 `GUI` 并打开窗口后。用 `gvim` 的时候，它在 `VimEnter` 之前发生，可用它来定位窗口，如 `:autocmd GUIEnter * winpos 100 50`
+* `GUIFailed`：启动 `GUI` 失败后，如果可能，`Vim` 会继续在终端模式下运行 (仅当在 `Unix` 相容系统上连接 `XServer` 失败后)
+* `InsertChange`：在插入或替换模式下输入 `<Insert>` 时
+* `InsertCharPre`：插入模式输入每个字符前
+* `InsertEnter`：刚开始插入模式之前，也适用于替换模式和虚拟替换模式
+* `InsertLeave`：离开插入模式时
+* `MenuPopup`：刚要显示弹出菜单前 (鼠标右键下)，用于根据光标或鼠标指针下的内容调整菜单
+* `QuickFixCmdPre`：开始执行 `quickfix` 命令前，如果该命令出错，不执行 `quickfix` 命令
+* `QuickFixCmdPost`：类似于 `QuickFixCmdPre`，但在执行 `quickfix` 命令后，跳转到第一个位置之前
+* `QuitPre`：`:quit`、`:wq` 或 `:qall` 调用时，在决定是否关闭当前窗口或退出 `Vim` 之前，可用于在当前窗口是最后一个普通窗口时关闭辅助的窗口
+* `RemoteReply`：`Vim` 作为服务器时收到应答时。不过，即使定义了自动命令，还是要用 `remote_read()` 来取走应答
+* `SessionLoadPost`：载入 `:mksession` 命令建立的会话文件后
+* `ShellCmdPost`：执行用 `:!cmd`、`:shell`、`:make` 和 `:grep`指定的外壳命令后，可用于检查任何文件的改变
+* `ShellFilterPost`：执行用 `:{range}!cmd`、`:w !cmd` 或 `:r !cmd`指定的外壳命令后，可用于检查任何文件的改变
+* `SourcePre`：执行 `Vim` 脚本前
+* `SourceCmd`：执行 `Vim` 脚本时
+* `SpellFileMissing`：试图载入拼写检查文件，但找不到该文件时
+* `StdinReadPost`：从标准输入读取输入到缓冲区后，执行模式行前。仅用于 `Vim` 启动时使用了 `-` 参数时发生
+* `StdinReadPre`：从标准输入读取输入到缓冲区前。仅用于 `Vim` 启动时使用了 `-` 参数时发生
+* `SwapExists`：开始编辑文件时检测到交换文件已存在。只有此时，可以选择处理此情形的方法，也在此时，`Vim` 可能会询问用户应该如何做
+* `Syntax`：设置 `syntax` 选项时
+* `TabEnter`：刚进入标签页后，在激活 `WinEnter` 事件之后和 `BufEnter` 事件之前发生
+* `TabLeave`：刚要离开标签页前，`WinLeave` 事件在此之前已经激活
+* `TermChanged`：`term` 的值发生改变后。可用来重新读入语法文件，更新色彩、字体和其他终端相关的设置，对所有已载入的缓冲区执行
+* `TermResponse`：收到终端对 `t_RV` 的应答后
+* `TextChanged`：普通模式修改当前缓冲区文本之后，有预输入或有操作符等待时不激活
+* `TextChangedI`：插入模式修改当前缓冲区文本之后，弹出菜单可见时不激活
+* `User`：不会自动执行，只有用 `:doautocmd` 执行自动命令时才会调用
+* `UserGettingBored`：用户按同一个键 `42` 遍的时候（这是 `Vim` 里隐藏的一个彩蛋，没什么特殊意思，详细查看 `:help 42`）
+* `VimEnter`：做完所有启动任务后，包括载入 `.vimrc` 文件，执行 `-c cmd` 参数，创建所有的窗口并在其中载入所有缓冲区等
+* `VimLeave`：退出 `Vim` 前，刚写入 `.viminfo` 文件之后，和 `VimLeavePre` 一样，只执行一次
+* `VimLeavePre`：退出 `Vim` 时刚写入 `.viminfo` 文件之前
+* `VimResized`：在 `Vim` 窗口的大小改变后，因而 `lines` 和/或 `columns` 也已随之改变。不过，启动时不用
+* `WinEnter`：进入别的窗口后。不包括 `Vim` 启动时的第一个窗口，可用来设定窗口的高度。如果该窗口显示缓冲区，`Vim` 在 `WinEnter` 自动命令之后执行 `BufEnter` 自动命令。
+* `WinLeave`：离开某窗口前。如果将要进入的窗口要显示的是别的缓冲区，`Vim` 在 `WinLeave` 自动命令前先执行 `BufLeave` 命令 (但不包括 `:new`)。`:qa` 或 `:q` 退出 `Vim` 时不会激活
+----
+<red>date</red> : 2013-11-04
+----

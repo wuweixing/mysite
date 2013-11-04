@@ -1,0 +1,22 @@
+%title 编码人生
+
+[[../index|首页]]
+==编码人生==
+----
+<center>
+<h2>
+[[ruby/index|Rb]]
+[[rails/index|Rails]]
+[[sinatra/index|Sinatra]]
+----
+[[coffeescript/index|Coffee]]
+[[javascript/index|JS]]
+[[jquery/index|jQuery]]
+[[angularjs/index|AngularJS]]
+[[bootstrap/index|Bootstrap]]
+----
+[[bash/index|Bash]]
+[[vim/index|Vim]]
+</h2>
+</center>
+----

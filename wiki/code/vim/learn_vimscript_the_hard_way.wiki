@@ -1,0 +1,81 @@
+%title 《Learn Vimscript the Hard Way》阅读笔记
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|Vim]]
+==《Learn Vimscript the Hard Way》阅读笔记==
+----
+===脚本基础===
+
+注释：使用 `"` 开始一条单行注释，但在 `map` 键绑定中无效
+
+内建变量
+* `$MYVIMRC`：当前使用的配置文件路径
+
+基本操作
+* `:echo`：输出信息，但不会被记录
+* `:echom`：输出信息，且会被记录，可以使用 `:messages` 获取所有记录的输出信息
+* `:source`：加载 `Vim` 脚本
+----
+===选项设置===
+
+设置要么是布尔值 `on` 或 `off`，要么是一个值
+
+所有的布尔设置项都有这样的规则：`:set <name>` 表示设置为 `on`，`:set no<name>` 表示设置为 `off`。比如 `:set number` 开启行号，`:set nonumber` 关闭行号
+
+值设置项通过这样的方式设置：`set <name>=<value>`，如 `:set numberwidth=2`
+
+可以在一个设置语句中放置多个设置项，如 `:set number numberwidth=6`
+
+设置项的末尾加一个感叹号表示切换该项的当前值，`on` 变 `off`，`off` 变 `on`。如输入 `:set number!` 开启行号，然后再次输入 `:set number!` 则又关闭行号了（只适用于布尔值选项）
+
+设置项的末尾加一个问号可以得到该项的当前设置值。`:set number` -> `:set number?`，返回 `number`；`:set nonumber` -> `:set number?`，返回 `nonumber`
+
+如果希望设置项只对当前缓冲区生效，可以使用 `:setlocal`
+----
+===按键绑定===
+
+绑定按键使用 `map/nmap/vmap/imap`，特殊按键使用 `<keyname>` 的形式表述，如空格表示为 `<space>`
+
+键绑定默认都是支持递归调用的，不支持递归调用的版本：`noremap/nnoremap/vnoremap/inoremap`
+
+取消绑定：`unmap/nunmap/vunmap/iunmap`
+
+`map` 对所有模式生效，`nmap` 只针对 `Normal` 模式有效，`vmap` 只针对 `Visual` 模式有效，`imap` 只针对 `Insert` 模式有效
+
+`map` 默认对所有缓冲区生效，如果想只影响当前缓冲区，可以在 `map` 系列指令的后面接一个 `<buffer>` 标识，如 `:nmap <buffer> jk <esc>`
+
+常见特殊标识符
+* `<esc>`：`ESC` 键
+* `<cr>`：回车键
+* `<space>`：空格
+* `<leader>`：一个专用的前导按键，可通过 `:let mapleader=` 定制
+* `<localleader>`：只针对当前缓冲区生效的前导按键，可通过 `:let maplocalleader=` 定制
+* `<nop>`：不执行任何操作
+* `<buffer>`：当前缓冲区
+----
+===设置别名===
+
+* `:abbreviate`：作用于所有模式（缩写为 `ab`）
+* `:iabbrev`：作用于插入模式（缩写为 `iab`）
+* `:cabbrev`：作用于命令行模式（缩写为 `cab`）
+----
+===窗口相关===
+
+* `:split`：水平分割
+* `:vspilt`：垂直分割
+----
+===自动命令===
+
+基本格式：`:autocmd 事件 匹配模式 待执行的命令`（此处的 “`待执行的命令`” 不能使用特殊标识符如 `<cr>` 等，可同时指定多个事件，以逗号分隔）
+
+命令分组
+{{{
+augroup 组名
+    " 自动命令
+augroup END
+}}}
+
+清除全部已定义的自动命令：`autocmd!`
+----
+<red>date</red> : 2013-10-31、2013-11-04
+----

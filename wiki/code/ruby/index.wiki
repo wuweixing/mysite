@@ -1,0 +1,4 @@
+%title Ruby
+
+[[../../index|首页]] - [[../index|Code]]
+==Ruby==
