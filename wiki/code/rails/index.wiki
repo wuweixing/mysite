@@ -1,4 +1,0 @@
-%title Rails
-
-[[../../index|首页]] - [[../index|Code]]
-==Rails==
