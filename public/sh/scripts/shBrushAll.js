@@ -1,4 +1,4 @@
-// For C
+// For C/C++
 SyntaxHighlighter.brushes.Cpp = function() {
     var datatypes = 'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
                     'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
@@ -65,7 +65,100 @@ SyntaxHighlighter.brushes.Cpp = function() {
 };
 
 SyntaxHighlighter.brushes.Cpp.prototype = new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Cpp.aliases   = ['c'];
+SyntaxHighlighter.brushes.Cpp.aliases   = ['c', 'cpp'];
+
+
+// For Haskell
+SyntaxHighlighter.brushes.Haskell = function() {
+        var _split = function(str) {
+            return "\\s"+str.replace(/ /g,"\\s|\\s").replace(/>/g, '&gt;').replace(/</g, '&lt;')+"\\s";
+        }
+
+        var keywords = 'case class data deriving do else if in infixl infixr instance let module of' +
+                       'primitive then type where import as hiding qualified newtype default';
+
+        var control = 'do if then else'
+        var syntax_operators = '=> -> <- :: \\';
+        var prelude_funcs = '\\$! catch !! \\$ && \\+\\+ . =<< minBound maxBound succ pred toEnum fromEnum enumFrom enumFromThen enumFromTo enumFromThenTo == /= pi exp sqrt log \\*\\* \\(\\*\\*\\) logBase sin tan cos asin atan acos sinh tanh cosh asinh atanh acosh / recip fromRational quot rem div mod quotRem divMod toInteger \\(>>=\\) >>= \\(>>\\) >> return fail \\(\\+\\) \\+ \\(\\*\\) \\* \\(\\-\\) \\- negate abs signum fromInteger compare \\(<\\) < \\(>=\\) >= \\(>\\) > \\(<=\\) <= max min readsPrec readList floatRadix floatDigits floatRange decodeFloat encodeFloat exponent significand scaleFloat isNaN isInfinite isDenormalized isNegativeZero isIEEE atan2 properFraction truncate round ceiling floor showsPrec show showList \\(\\^\\) \\^ \\(\\^\\^\\) \\^\\^ all and any appendFile asTypeOf break concat concatMap const curry cycle drop dropWhile either elem error even filter flip foldl foldl1 foldr foldr1 fromIntegral fst gcd getChar getContents getLine head id init interact ioError iterate last lcm length lex lines lookup map mapM mapM_ maximum maybe minimum not notElem null odd or otherwise print product putChar putStr putStrLn read readFile readIO readLn readParen reads realToFrac repeat replicate reverse scanl scanl1 scanr scanr1 seq sequence sequence_ showChar showParen showString shows snd span splitAt subtract sum tail take takeWhile uncurry undefined unlines until unwords unzip unzip3 userError words writeFile zip zip3 zipWith zipWith3 \\(\\|\\|\\) \\|\\|'
+        var common_operators = "\\$ \\. >>= >> <\\$> <\\*> \\+\\+ \\+ \\- \\*";
+
+        this.regexList = [
+                { regex: /--.*$/gm, css: 'comments' },
+                { regex: /{-[\s\S]*?-}/gm, css: 'comments' },
+                { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
+                { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' },
+                { regex: new RegExp('^ *#.*', 'gm'), css: 'preprocessor' },
+                { regex: new RegExp(this.getKeywords(keywords), 'g'), css: 'keyword' },
+                { regex: new RegExp(_split(syntax_operators), 'g'), css: 'syntax_operators' },
+                { regex: new RegExp(_split(common_operators), 'g'), css: 'common_operators' },
+                { regex: new RegExp(_split(control), 'g'), css: 'control' },
+                { regex: /`\w+`/g, css: 'common_operators' },
+                { regex: /\b[0-9][0-9]*\b/g, css: 'value' },
+                { regex: /\b[A-Z]\w*\b/g, css: 'type_constructors' },
+                { regex: new RegExp(this.getKeywords(prelude_funcs), 'g'), css: 'prelude' },
+        ];
+
+        this.style = '.haskell.syntax_operators { color: #993300; }' +
+                     '.haskell.common_operators { color: #993300; }' +
+                     '.haskell.type_constructors { font-style: italic; }';
+};
+
+SyntaxHighlighter.brushes.Haskell.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Haskell.aliases   = ['haskell'];
+
+
+// For OCaml
+SyntaxHighlighter.brushes.FSharp = function() {
+    var keywords = 'abstract and as assert base begin class default delegate do done ' +
+        'downcast downto elif else end exception extern false finally for '+
+        'fun function if in inherit inline interface internal lazy let ' +
+        'match member module mutable namespace new null of open or '+
+        'override private public rec return static struct then to '+
+        'true try type upcast use val void when while with yield';
+    var ocaml = 'asr land lor lsl lsr lxor mod sig';
+    var reserved ='atomic break checked component const constraint constructor '+
+        'continue eager event external fixed functor global include '+
+        'method mixin object parallel process protected pure '+
+        'sealed tailcall trait virtual volatile';
+    var symbolic = 'let! use! do! yield! return! \\| -> <- \\. : \\( \\) \\[ \\] \\[< >\\] \\[\\| \\|\\] '+
+        '\\{ \\} \' # :\\?> :\\? ; ;; :> := _ \\.\\. ::';
+
+    this.regexList = [
+        { regex: SyntaxHighlighter.regexLib.singleLineCComments, css: 'comments' },
+        { regex: new RegExp('\\(\\*[\\s\\S]*?\\*\\)', 'gm'), css: 'comments' },
+        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
+        { regex: new RegExp('^\\s*#.*', 'gm'), css: 'preprocessor' },
+        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
+        { regex: new RegExp(this.getKeywords(ocaml), 'gm'), css: 'color1' },
+        { regex: new RegExp(this.getKeywords(reserved), 'gm'), css: 'color2' },
+        { regex: new RegExp(this.getKeywords(symbolic), 'gm'), css: 'color3' }
+    ];
+}
+
+SyntaxHighlighter.brushes.FSharp.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.FSharp.aliases   = ['ocaml'];
+
+
+// For Lisp
+SyntaxHighlighter.brushes.Lisp = function(){
+    var funcs     = 'lambda list progn mapcar car cdr reverse member append format';
+    var keywords  = 'let while unless cond if eq t nil defvar dotimes setf listp numberp not equal';
+    var macros    = 'loop when dolist dotimes defun';
+    var operators = '> < + - = * / %';
+
+    this.regexList = [
+        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
+        { regex: new RegExp('&\\w+;', 'g'), css: 'plain' },
+        { regex: new RegExp(';.*', 'g'), css: 'comments' },
+        { regex: new RegExp("'(\\w|-)+", 'g'), css: 'variable' },
+        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
+        { regex: new RegExp(this.getKeywords(macros), 'gm'), css: 'keyword' },
+        { regex: new RegExp(this.getKeywords(funcs), 'gm'), css: 'functions' },
+    ];
+}
+
+SyntaxHighlighter.brushes.Lisp.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Lisp.aliases   = ['lisp'];
 
 
 // For PHP

@@ -1,0 +1,4 @@
+%title Haskell
+
+[[../../index|首页]] - [[../index|Code]]
+==Haskell==

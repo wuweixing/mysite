@@ -1,0 +1,4 @@
+%title OCaml
+
+[[../../index|首页]] - [[../index|Code]]
+==OCaml==
