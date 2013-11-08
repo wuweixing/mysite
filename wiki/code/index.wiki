@@ -6,10 +6,12 @@
 <center>
 <h2>
 [[cpp/index|C++]]
+[[dlang/index|D]]
 [[haskell/index|Haskell]]
 [[ocaml/index|OCaml]]
 [[commonlisp/index|CL]]
 [[php/index|PHP]]
+[[python/index|PY]]
 [[ruby/index|Rb]]
 [[coffeescript/index|Coffee]]
 [[javascript/index|JS]]
@@ -25,10 +27,12 @@
 ----
 [[rails/index|Rails]]
 [[sinatra/index|Sinatra]]
+[[shoes/index|Shoes]]
 ----
 [[node/index|Node]]
 [[html5/index|HTML5]]
 [[jquery/index|jQuery]]
+[[angularjs/index|AngularJS]]
 [[bootstrap/index|Bootstrap]]
 ----
 [[bash/index|Bash]]

@@ -8,6 +8,7 @@
 </h5>
 ----
 <h2>
+[[album/index|Album]]
 [[journal/index|Journal]]
 [[works/index|Works]]
 [[code/index|Code]]

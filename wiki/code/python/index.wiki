@@ -1,0 +1,4 @@
+%title Python
+
+[[../../index|首页]] - [[../index|Code]]
+==Python==
