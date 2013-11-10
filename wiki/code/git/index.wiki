@@ -1,4 +1,4 @@
-%title Dlang
+%title Git
 
 [[../../index|首页]] - [[../index|Code]]
-==Dlang==
+==Git==

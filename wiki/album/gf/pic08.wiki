@@ -3,7 +3,7 @@
 [[../../index|首页]] - [[../index|Album]]
 ==Girl Friend==
 ----
-<center>[[../family/pic01|{{../../../public/images/gf/yun06.jpg||width="400px" height="530px"}}]]</center>
+<center>[[../family/pic01|{{../../../public/images/gf/yun07.jpg||width="400px" height="530px"}}]]</center>
 ----
-<red>date</red> : 2013-03-09
+<red>date</red> : 2013-10-27
 ----

@@ -1,4 +1,0 @@
-%title Sinatra
-
-[[../../index|首页]] - [[../index|Code]]
-==Sinatra==

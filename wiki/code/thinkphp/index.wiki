@@ -1,4 +1,0 @@
-%title ThinkPHP
-
-[[../../index|首页]] - [[../index|Code]]
-==ThinkPHP==

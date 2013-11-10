@@ -1,4 +1,0 @@
-%title Shoes
-
-[[../../index|首页]] - [[../index|Code]]
-==Shoes==
