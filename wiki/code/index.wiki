@@ -5,14 +5,14 @@
 ----
 <center>
 <h2>
-[[cpp/index|C++]]
-[[commonlisp/index|CL]]
+[[c/index|C]]
 [[php/index|PHP]]
+[[ruby/index|Rb]]
 [[html5/index|HTML5]]
 ----
 [[algorithms/index|Algo]]
+[[csbase/index|CSBase]]
 [[linux/index|Linux]]
-[[qt/index|QtGUI]]
 ----
 [[codeigniter/index|CI]]
 [[laravel/index|Laravel]]

@@ -1,4 +1,0 @@
-%title Qt GUI Framework
-
-[[../../index|首页]] - [[../index|Code]]
-==Qt GUI Framework==

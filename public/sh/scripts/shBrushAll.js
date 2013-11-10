@@ -1,4 +1,4 @@
-// For C/C++
+// For C
 SyntaxHighlighter.brushes.Cpp = function() {
     var datatypes = 'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' +
                     'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' +
@@ -65,29 +65,7 @@ SyntaxHighlighter.brushes.Cpp = function() {
 };
 
 SyntaxHighlighter.brushes.Cpp.prototype = new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Cpp.aliases   = ['c', 'cpp'];
-
-
-// For Lisp
-SyntaxHighlighter.brushes.Lisp = function(){
-    var funcs     = 'lambda list progn mapcar car cdr reverse member append format';
-    var keywords  = 'let while unless cond if eq t nil defvar dotimes setf listp numberp not equal';
-    var macros    = 'loop when dolist dotimes defun';
-    var operators = '> < + - = * / %';
-
-    this.regexList = [
-        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
-        { regex: new RegExp('&\\w+;', 'g'), css: 'plain' },
-        { regex: new RegExp(';.*', 'g'), css: 'comments' },
-        { regex: new RegExp("'(\\w|-)+", 'g'), css: 'variable' },
-        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
-        { regex: new RegExp(this.getKeywords(macros), 'gm'), css: 'keyword' },
-        { regex: new RegExp(this.getKeywords(funcs), 'gm'), css: 'functions' },
-    ];
-}
-
-SyntaxHighlighter.brushes.Lisp.prototype = new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Lisp.aliases   = ['lisp'];
+SyntaxHighlighter.brushes.Cpp.aliases   = ['c'];
 
 
 // For PHP
@@ -152,3 +130,31 @@ SyntaxHighlighter.brushes.Php = function() {
 
 SyntaxHighlighter.brushes.Php.prototype = new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.Php.aliases   = ['php'];
+
+
+// For Ruby
+SyntaxHighlighter.brushes.Ruby = function() {
+    var keywords = 'alias and BEGIN begin break case class def define_method defined do each else elsif ' +
+        'END end ensure false for if in module new next nil not or raise redo rescue retry return ' +
+        'self super then throw true undef unless until when while yield';
+
+    var builtins = 'Array Bignum Binding Class Continuation Dir Exception FalseClass File::Stat File Fixnum Fload ' +
+        'Hash Integer IO MatchData Method Module NilClass Numeric Object Proc Range Regexp String Struct::TMS Symbol ' +
+        'ThreadGroup Thread Time TrueClass';
+
+    this.regexList = [
+        { regex: SyntaxHighlighter.regexLib.singleLinePerlComments, css: 'comments' },
+        { regex: SyntaxHighlighter.regexLib.doubleQuotedString, css: 'string' },
+        { regex: SyntaxHighlighter.regexLib.singleQuotedString, css: 'string' },
+        { regex: /\b[A-Z0-9_]+\b/g, css: 'constants' },
+        { regex: /:[a-z][A-Za-z0-9_]*/g, css: 'color2' },
+        { regex: /(\$|@@|@)\w+/g, css: 'variable bold' },
+        { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
+        { regex: new RegExp(this.getKeywords(builtins), 'gm'), css: 'color1' }
+    ];
+
+    this.forHtmlScript(SyntaxHighlighter.regexLib.aspScriptTags);
+};
+
+SyntaxHighlighter.brushes.Ruby.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Ruby.aliases   = ['ruby'];
