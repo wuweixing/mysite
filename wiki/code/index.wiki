@@ -6,6 +6,8 @@
 <center>
 <h2>
 [[c/index|C]]
+[[d/index|D]]
+[[lua/index|Lua]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
 [[html5/index|HTML5]]
@@ -13,6 +15,7 @@
 [[algorithms/index|Algo]]
 [[csbase/index|CSBase]]
 [[linux/index|Linux]]
+[[gtk/index|GTK]]
 ----
 [[codeigniter/index|CI]]
 [[laravel/index|Laravel]]

@@ -1,0 +1,45 @@
+%title 《AngularJS》阅读笔记
+%template code
+
+[[../../index|首页]] - [[../index|Code]] - [[index|AngularJS]]
+==《AngularJS》阅读笔记==
+----
+===AngularJS里的MVC===
+
+* `M`：由 `ng-model` 指定
+* `V`：浏览器 `DOM`
+* `C`：由 `ng-controller` 指定
+
+不再需要声明大量的 `id` 或 `class` 属性；鼓励在 `HTML` 元素里面直接绑定事件
+----
+===内置标识符===
+
+* `ng-app`：声明哪部分内容将被 `AngularJS` 接管，可指定命名空间
+* `ng-controller`：指定该部分内容将被哪个控制器处理，会默认传递作用域变量 `scope`
+* `ng-model`：指定当前标签的值将被绑定到哪个变量，可与多种表单标签协同工作
+* `ng-bind`：数据绑定，可用于变量内插，简写为 `{{ .. }}`。使用 `ng-bind` 而不是 `{{ .. }}` 可以避免当数据没有完全加载完成时，让用户看到不友好的模板内容
+* `ng-repeat`：重复当前代码块，包含预定义的下标 `index`、`first`、`middle`、`last` 等
+* `ng-click`：捕获单击事件
+* `ng-dblclick`：捕获双击事件
+* `ng-change`：捕获值的变化
+* `ng-submit`：捕获表单提交动作
+* `ng-show`：根据其值为真还是为假，决定当前元素是否显示
+* `ng-hide`：根据其值为真还是为假，决定当前元素是否隐藏
+* `ng-class`：指定类名
+* `ng-style`：指定样式
+----
+===常用过滤器===
+
+* `currency`：将数值转成货币格式
+----
+===特殊变量/函数===
+
+* `$scope`：作用域
+* `$index`：`ng-repeat` 的迭代下标
+* `$first`：`ng-repeat` 的第一个迭代下标
+* `$middle`：`ng-repeat` 迭代的最中间一个元素的下标
+* `$last`：`ng-repeat` 迭代的最后一个元素的下标
+* `$watch`：监视变化，第一参数为被监视的模型名（字符串形式），第二个参数为对应的处理函数
+----
+<red>date</red> : 2013-11-11
+----

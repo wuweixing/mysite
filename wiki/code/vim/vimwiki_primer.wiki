@@ -100,7 +100,7 @@ let g:vimwiki_list = [blog]
 
 学编程的都知道，看代码+写代码永远是进步最快的学习方式，`Vimwiki` 也一样，你可以一边参考我博客 `wiki` 文件的写法，一边自己实践
 
-* 本教程对应的 `wiki` 源文件在线浏览地址：<a href="https://raw.github.com/ruchee/mysite/master/wiki/code/tools/vimwiki_primer.wiki" target="_blank">https://raw.github.com/ruchee/mysite/master/wiki/code/tools/vimwiki_primer.wiki</a>
+* 本教程对应的 `wiki` 源文件在线浏览地址：<a href="https://raw.github.com/ruchee/mysite/master/wiki/code/vim/vimwiki_primer.wiki" target="_blank">https://raw.github.com/ruchee/mysite/master/wiki/code/vim/vimwiki_primer.wiki</a>
 * 与本教程匹配的 `Vim` 配置在线浏览地址：<a href="https://raw.github.com/ruchee/vim/master/_vimrc" target="_blank">https://raw.github.com/ruchee/vim/master/_vimrc</a>
 
 `Vimwiki` 只是个标记转换器，最终将转换成 `HTML` 代码，默认使用的是一种和 `Markdown` 类似的标记语言，但更好用（也许是用习惯了，我对 `Markdown` 可以说是丝毫无爱）
