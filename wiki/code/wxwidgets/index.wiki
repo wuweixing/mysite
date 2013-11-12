@@ -1,4 +1,4 @@
-%title HTML5
+%title wxWidgets
 
 [[../../index|首页]] - [[../index|Code]]
-==HTML5==
+==wxWidgets==
