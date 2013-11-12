@@ -21,6 +21,8 @@
 ----
 [[codeigniter/index|CodeIgniter]]
 [[laravel/index|Laravel]]
+[[sinatra/index|Sinatra]]
+[[rails/index|Rails]]
 ----
 [[node/index|Node]]
 [[html5/index|HTML5]]
