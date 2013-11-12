@@ -5,8 +5,7 @@
 ----
 <center>
 <h2>
-[[c/index|C]]
-[[d/index|D]]
+[[cpp/index|C++]]
 [[lua/index|Lua]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
@@ -20,7 +19,6 @@
 [[codeigniter/index|CI]]
 [[laravel/index|Laravel]]
 [[symfony/index|SF]]
-[[zendframework/index|ZF]]
 ----
 [[jquery/index|jQuery]]
 [[angularjs/index|Angular]]
