@@ -6,9 +6,6 @@
 <center>
 <h2>
 [[c/index|C]]
-[[cpp/index|C++]]
-[[commonlisp/index|CL]]
-[[lua/index|Lua]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
 [[coffeescript/index|Coffee]]
@@ -17,10 +14,8 @@
 [[csbase/index|CSBase]]
 [[math/index|Math]]
 [[linux/index|Linux]]
-[[gtk/index|GTK+]]
-[[wxwidgets/index|Wx]]
 ----
-[[codeigniter/index|CodeIgniter]]
+[[codeigniter/index|CI]]
 [[laravel/index|Laravel]]
 [[sinatra/index|Sinatra]]
 [[rails/index|Rails]]

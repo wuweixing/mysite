@@ -1,4 +1,0 @@
-%title GTK+
-
-[[../../index|首页]] - [[../index|Code]]
-==GTK+==
