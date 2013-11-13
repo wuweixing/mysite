@@ -5,6 +5,7 @@
 ----
 <center>
 <h2>
+[[c/index|C]]
 [[cpp/index|C++]]
 [[commonlisp/index|CL]]
 [[lua/index|Lua]]
