@@ -1,0 +1,4 @@
+%title FXRuby
+
+[[../../index|首页]] - [[../index|Code]]
+==FXRuby==

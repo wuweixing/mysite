@@ -6,6 +6,7 @@
 <center>
 <h2>
 [[c/index|C]]
+[[commonlisp/index|CL]]
 [[php/index|PHP]]
 [[ruby/index|Rb]]
 [[coffeescript/index|Coffee]]
@@ -19,12 +20,13 @@
 [[laravel/index|Laravel]]
 [[sinatra/index|Sinatra]]
 [[rails/index|Rails]]
+[[fxruby/index|FXRb]]
 ----
 [[node/index|Node]]
 [[html5/index|HTML5]]
 [[jquery/index|jQuery]]
 [[angularjs/index|Angular]]
-[[bootstrap/index|Bootstrap]]
+[[bootstrap/index|BS]]
 ----
 [[bash/index|Bash]]
 [[git/index|Git]]
