@@ -1,4 +1,4 @@
-%title Common Lisp
+%title D Language
 
 [[../../index|首页]] - [[../index|Code]]
-==Common Lisp==
+==D Language==
