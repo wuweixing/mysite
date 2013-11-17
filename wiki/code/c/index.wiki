@@ -1,4 +1,0 @@
-%title C Language
-
-[[../../index|首页]] - [[../index|Code]]
-==C Language==

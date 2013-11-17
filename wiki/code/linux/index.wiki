@@ -1,4 +1,0 @@
-%title Linux
-
-[[../../index|首页]] - [[../index|Code]]
-==Linux==

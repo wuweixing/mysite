@@ -1,4 +1,4 @@
-%title FXRuby
+%title JavaScript
 
 [[../../index|首页]] - [[../index|Code]]
-==FXRuby==
+==JavaScript==
