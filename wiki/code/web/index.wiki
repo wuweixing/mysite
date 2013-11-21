@@ -1,4 +1,4 @@
-%title Rails
+%title Web
 
 [[../../index|首页]] - [[../index|Code]]
-==Rails==
+==Web==

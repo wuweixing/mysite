@@ -1,4 +1,4 @@
-%title JavaScript
+%title Lua
 
 [[../../index|首页]] - [[../index|Code]]
-==JavaScript==
+==Lua==

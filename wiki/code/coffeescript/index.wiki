@@ -1,0 +1,11 @@
+%title CoffeeScript
+
+[[../../index|首页]] - [[../index|Code]]
+==CoffeeScript==
+----
+<center>
+<h2>
+[[javascript_the_good_parts|《JavaScript The Good Parts》阅读笔记]]
+</h2>
+</center>
+----
