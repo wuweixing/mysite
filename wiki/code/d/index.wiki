@@ -1,4 +1,4 @@
-%title Ruby Frameworks
+%title D Language
 
 [[../../index|首页]] - [[../index|Code]]
-==Ruby Frameworks==
+==D Language==

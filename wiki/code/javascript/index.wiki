@@ -1,4 +1,4 @@
-%title Ruby
+%title JavaScript
 
 [[../../index|首页]] - [[../index|Code]]
-==Ruby==
+==JavaScript==
