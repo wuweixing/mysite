@@ -1,4 +1,4 @@
-%title Algorithms
+%title 数据结构与算法
 
 [[../../index|首页]] - [[../index|Code]]
-==Algorithms==
+==数据结构与算法==

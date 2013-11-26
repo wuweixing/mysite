@@ -1,4 +1,4 @@
-%title Math
+%title 数学与数学软件
 
 [[../../index|首页]] - [[../index|Code]]
-==Math==
+==数学与数学软件==

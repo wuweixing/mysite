@@ -1,4 +1,4 @@
-%title JavaScript Frameworks
+%title JavaScript框架
 
 [[../../index|首页]] - [[../index|Code]]
-==JavaScript Frameworks==
+==JavaScript框架==

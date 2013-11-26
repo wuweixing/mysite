@@ -1,4 +1,4 @@
-%title CSBase
+%title 计算机专业基础
 
 [[../../index|首页]] - [[../index|Code]]
-==CSBase==
+==计算机专业基础==

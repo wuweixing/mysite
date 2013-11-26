@@ -1,4 +1,4 @@
-%title Web大杂烩
+%title Linux编程
 
 [[../../index|首页]] - [[../index|Code]]
-==Web大杂烩==
+==Linux编程==
