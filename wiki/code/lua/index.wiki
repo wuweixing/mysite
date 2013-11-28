@@ -1,4 +1,0 @@
-%title Lua
-
-[[../../index|首页]] - [[../index|Code]]
-==Lua==

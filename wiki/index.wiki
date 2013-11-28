@@ -11,7 +11,7 @@
 [[album/index|Album]]
 [[journal/index|Journal]]
 [[works/index|Works]]
-[[code/index|Code]]
+<a href="http://blog.ruchee.com" target="_blank">Code</a>
 <a href="http://hathway.ruchee.com" target="_blank">GF</a>
 </h2>
 </center>

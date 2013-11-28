@@ -1,4 +1,0 @@
-%title PHP
-
-[[../../index|首页]] - [[../index|Code]]
-==PHP==

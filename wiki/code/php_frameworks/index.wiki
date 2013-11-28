@@ -1,4 +1,0 @@
-%title PHP开发框架
-
-[[../../index|首页]] - [[../index|Code]]
-==PHP开发框架==
